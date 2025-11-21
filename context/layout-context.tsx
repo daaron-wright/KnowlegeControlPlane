@@ -1,6 +1,7 @@
-import { createContext, useContext } from "react";
+"use client";
 
-import type { AgentTraceRun, UserRole } from "@/types/dashboard";
+import { createContext, useContext, useState, useCallback } from "react";
+import type { UserRole, AgentTraceRun } from "@/types/dashboard";
 
 export interface LayoutContextValue {
   role: UserRole;
@@ -19,10 +20,9 @@ export const LayoutContext = createContext<LayoutContextValue | null>(null);
 
 export const useLayoutContext = () => {
   const ctx = useContext(LayoutContext);
-
   if (!ctx) {
     throw new Error("useLayoutContext must be used within a LayoutContext provider");
   }
-
   return ctx;
 };
+

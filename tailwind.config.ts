@@ -1,18 +1,18 @@
 import type { Config } from "tailwindcss";
 
-export default {
-  darkMode: ["class"],
-  content: ["./client/**/*.{ts,tsx}"],
-  prefix: "",
+const config: Config = {
+  content: [
+    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
+    "./components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./app/**/*.{js,ts,jsx,tsx,mdx}",
+    "*.{js,ts,jsx,tsx,mdx}",
+  ],
   theme: {
-    container: {
-      center: true,
-      padding: "2rem",
-      screens: {
-        "2xl": "1400px",
-      },
-    },
     extend: {
+      fontFamily: {
+        "noto-naskh-arabic": ["var(--font-noto-naskh-arabic)"],
+        "noto-kufi": ["var(--font-noto-kufi-arabic)"],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -47,80 +47,56 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        sidebar: {
-          DEFAULT: "hsl(var(--sidebar-background))",
-          foreground: "hsl(var(--sidebar-foreground))",
-          primary: "hsl(var(--sidebar-primary))",
-          "primary-foreground": "hsl(var(--sidebar-primary-foreground))",
-          accent: "hsl(var(--sidebar-accent))",
-          "accent-foreground": "hsl(var(--sidebar-accent-foreground))",
-          border: "hsl(var(--sidebar-border))",
-          ring: "hsl(var(--sidebar-ring))",
-        },
-        surface: {
-          base: "hsl(var(--surface-base))",
-          raised: "hsl(var(--surface-raised))",
-          strong: "hsl(var(--surface-strong))",
-          muted: "hsl(var(--surface-muted))",
-          inverse: "hsl(var(--surface-inverse))",
-        },
-        status: {
-          success: "hsl(var(--success))",
-          "success-foreground": "hsl(var(--success-foreground))",
-          warning: "hsl(var(--warning))",
-          "warning-foreground": "hsl(var(--warning-foreground))",
-          info: "hsl(var(--info))",
-          "info-foreground": "hsl(var(--info-foreground))",
-        },
-        banner: {
-          warning: "hsl(var(--banner-warning-bg))",
-          "warning-border": "hsl(var(--banner-warning-border))",
-          "warning-foreground": "hsl(var(--banner-warning-foreground))",
-          error: "hsl(var(--banner-error-bg))",
-          "error-border": "hsl(var(--banner-error-border))",
-          "error-foreground": "hsl(var(--banner-error-foreground))",
-        },
-      },
-      fontFamily: {
-        sans: [
-          "Source Sans 3",
-          "Inter",
-          "ui-sans-serif",
-          "system-ui",
-          "-apple-system",
-          "BlinkMacSystemFont",
-          "Segoe UI",
-          "sans-serif",
-        ],
       },
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
       },
-      keyframes: {
-        "accordion-down": {
-          from: {
-            height: "0",
-          },
-          to: {
-            height: "var(--radix-accordion-content-height)",
+      typography: {
+        DEFAULT: {
+          css: {
+            maxWidth: '100%',
+            color: 'inherit',
+            a: {
+              color: 'inherit',
+              textDecoration: 'underline',
+              fontWeight: '500',
+            },
+            code: {
+              color: 'inherit',
+              backgroundColor: 'hsl(var(--muted))',
+              paddingLeft: '4px',
+              paddingRight: '4px',
+              paddingTop: '2px',
+              paddingBottom: '2px',
+              borderRadius: '0.25rem',
+            },
+            'code::before': {
+              content: 'none',
+            },
+            'code::after': {
+              content: 'none',
+            },
+            hr: {
+              borderColor: 'hsl(var(--border))',
+            },
+            ul: {
+              marginLeft: '1.5rem',
+              listStyleType: 'disc',
+            },
+            ol: {
+              marginLeft: '1.5rem',
+            },
+            strong: {
+              fontWeight: '600',
+            },
           },
         },
-        "accordion-up": {
-          from: {
-            height: "var(--radix-accordion-content-height)",
-          },
-          to: {
-            height: "0",
-          },
-        },
-      },
-      animation: {
-        "accordion-down": "accordion-down 0.2s ease-out",
-        "accordion-up": "accordion-up 0.2s ease-out",
       },
     },
   },
-  plugins: [require("tailwindcss-animate")],
-} satisfies Config;
+  plugins: [require('@tailwindcss/typography')],
+};
+
+export default config;

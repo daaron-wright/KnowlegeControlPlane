@@ -1,0 +1,117 @@
+{
+    "workflow": [
+        {
+            "stage": "Data Acquisition",
+            "sequence": [
+                1,
+                2,
+                3
+            ],
+            "steps": [
+                {
+                    "step": 1,
+                    "name": "Collect Internal Portfolio Data",
+                    "agent": "Data Acquisition Agent",
+                    "purpose": "Gather internal portfolio information."
+                },
+                {
+                    "step": 2,
+                    "name": "Obtain Carbon & Financial Data",
+                    "agent": "Data Acquisition Agent",
+                    "purpose": "Acquire necessary carbon emissions and financial metrics."
+                },
+                {
+                    "step": 3,
+                    "name": "Integrate and Initial Merge",
+                    "agent": "Data Acquisition Agent",
+                    "purpose": "Combine and initially align the collected datasets."
+                }
+            ]
+        },
+        {
+            "stage": "Data Validation",
+            "sequence": [
+                4,
+                5,
+                6
+            ],
+            "steps": [
+                {
+                    "step": 4,
+                    "name": "Data Completeness & Accuracy Audit",
+                    "agent": "Data Validation Agent",
+                    "purpose": "Ensure the data is complete and accurate."
+                },
+                {
+                    "step": 5,
+                    "name": "Apply Proxy Data & Assumptions",
+                    "agent": "Data Validation Agent",
+                    "purpose": "Use proxy data and assumptions to fill gaps or enhance data quality."
+                },
+                {
+                    "step": 6,
+                    "name": "Data Verification & Sign-off",
+                    "agent": "Data Validation Agent",
+                    "purpose": "Final review and approval of the validated data."
+                }
+            ]
+        },
+        {
+            "stage": "Emission Calculations",
+            "sequence": [
+                7,
+                8,
+                9
+            ],
+            "parallel": true,
+            "steps": [
+                {
+                    "step": 7,
+                    "name": "Calculate Emissions for Real Assets Equity",
+                    "agent": "Emission Calculation Agent",
+                    "purpose": ""
+                },
+                {
+                    "step": 8,
+                    "name": "Calculate Emissions for Corporate Bonds",
+                    "agent": "Emission Calculation Agent",
+                    "purpose": ""
+                },
+                {
+                    "step": 9,
+                    "name": "Calculate Emissions for Infrastructure Equity",
+                    "agent": "Emission Calculation Agent",
+                    "purpose": ""
+                }
+            ]
+        },
+        {
+            "stage": "Reporting",
+            "sequence": [
+                10,
+                11,
+                12
+            ],
+            "steps": [
+                {
+                    "step": 10,
+                    "name": "Compile Evidence Pack",
+                    "agent": "Assurance Agent",
+                    "purpose": "Gather supporting documentation and evidence."
+                },
+                {
+                    "step": 11,
+                    "name": "Disclosure Preparation",
+                    "agent": "Reporting Agent",
+                    "purpose": "Prepare disclosures for regulatory or stakeholder reporting."
+                },
+                {
+                    "step": 12,
+                    "name": "Integration into Annual Report",
+                    "agent": "Reporting Agent",
+                    "purpose": "Incorporate emissions data and disclosures into the organization\u2019s formal annual reporting."
+                }
+            ]
+        }
+    ]
+}

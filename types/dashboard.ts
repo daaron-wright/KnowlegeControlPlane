@@ -100,9 +100,9 @@ export interface JourneyMatcher {
   keywords: string[];
 }
 
-type JourneyTone = "default" | "info" | "warning" | "success" | "danger" | "muted" | "positive";
+export type JourneyTone = "default" | "info" | "warning" | "success" | "danger" | "muted" | "positive";
 
-type JourneyStatus = "completed" | "warning" | "pending";
+export type JourneyStatus = "completed" | "warning" | "pending";
 
 export interface JourneyCopilotMessage {
   id: string;
@@ -226,3 +226,4 @@ export interface Journey {
   emptyStates: JourneyEmptyState[];
   matchers: JourneyMatcher[];
 }
+

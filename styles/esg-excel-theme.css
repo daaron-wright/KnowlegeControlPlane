@@ -1,0 +1,297 @@
+/* ESG Excel-inspired theme */
+.esg-workbook {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: #f0f0f0;
+  border: 1px solid #808080;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.esg-workbook-header {
+  background: linear-gradient(to bottom, #ffffff, #f0f0f0);
+  border-bottom: 1px solid #d0d0d0;
+  padding: 12px 16px;
+}
+
+.esg-workbook-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #2c5282;
+  margin: 0 0 4px 0;
+}
+
+.esg-workbook-metadata {
+  font-size: 11px;
+  color: #666;
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.esg-tab-strip {
+  background: linear-gradient(to bottom, #e8e8e8, #d0d0d0);
+  border-bottom: 1px solid #808080;
+  height: 28px;
+  display: flex;
+  align-items: flex-end;
+  padding: 0 8px;
+  position: relative;
+}
+
+.esg-tab {
+  background: linear-gradient(to bottom, #e0e0e0, #c8c8c8);
+  border: 1px solid #808080;
+  border-bottom: none;
+  border-radius: 4px 4px 0 0;
+  padding: 4px 12px;
+  margin-right: 2px;
+  cursor: pointer;
+  font-size: 11px;
+  color: #333;
+  text-decoration: none;
+  position: relative;
+  transition: all 0.2s ease;
+  height: 22px;
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+}
+
+.esg-tab.active {
+  background: linear-gradient(to bottom, #ffffff, #f8f8f8);
+  border-bottom: 1px solid #ffffff;
+  z-index: 1;
+  margin-bottom: -1px;
+  color: #000;
+  font-weight: 500;
+}
+
+.esg-tab:hover:not(.active) {
+  background: linear-gradient(to bottom, #f0f0f0, #d8d8d8);
+  color: #000;
+}
+
+.esg-scroll-controls {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 1px;
+}
+
+.esg-scroll-btn {
+  background: linear-gradient(to bottom, #e0e0e0, #c8c8c8);
+  border: 1px solid #808080;
+  padding: 2px 6px;
+  cursor: pointer;
+  font-size: 10px;
+  color: #404040;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 18px;
+}
+
+.esg-scroll-btn:hover {
+  background: linear-gradient(to bottom, #f0f0f0, #d8d8d8);
+  color: #000;
+}
+
+.esg-scroll-btn:active {
+  background: linear-gradient(to bottom, #d0d0d0, #c0c0c0);
+}
+
+.esg-sheet-content {
+  background: white;
+  padding: 16px;
+  min-height: 400px;
+  max-height: 600px;
+  overflow: auto;
+}
+
+.esg-sheet-header {
+  margin-bottom: 16px;
+  border-bottom: 2px solid #2c5282;
+  padding-bottom: 8px;
+}
+
+.esg-sheet-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #2c5282;
+  margin: 0 0 4px 0;
+}
+
+.esg-sheet-subtitle {
+  font-size: 12px;
+  color: #666;
+  margin: 0;
+}
+
+.esg-data-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 11px;
+  margin-top: 8px;
+}
+
+.esg-data-table th,
+.esg-data-table td {
+  border: 1px solid #d0d0d0;
+  padding: 6px 8px;
+  text-align: left;
+  vertical-align: top;
+}
+
+.esg-data-table th {
+  background: linear-gradient(to bottom, #f8f8f8, #e8e8e8);
+  font-weight: 600;
+  color: #333;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+}
+
+.esg-data-table tbody tr:nth-child(even) {
+  background: #f9f9f9;
+}
+
+.esg-data-table tbody tr:hover {
+  background: #e6f3ff;
+}
+
+.esg-data-table .numeric {
+  text-align: right;
+  font-family: 'Courier New', monospace;
+}
+
+.esg-data-table .currency {
+  text-align: right;
+  font-family: 'Courier New', monospace;
+  color: #2d7d32;
+  font-weight: 500;
+}
+
+.esg-data-table .emissions {
+  text-align: right;
+  font-family: 'Courier New', monospace;
+  color: #d32f2f;
+  font-weight: 500;
+}
+
+.quality-badge {
+  display: inline-block;
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-size: 9px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.quality-high {
+  background: #e8f5e8;
+  color: #2e7d32;
+  border: 1px solid #a5d6a7;
+}
+
+.quality-medium {
+  background: #fff3e0;
+  color: #f57c00;
+  border: 1px solid #ffcc02;
+}
+
+.quality-low {
+  background: #ffebee;
+  color: #d32f2f;
+  border: 1px solid #ef9a9a;
+}
+
+.esg-summary-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.esg-summary-card {
+  background: linear-gradient(to bottom, #ffffff, #f8f8f8);
+  border: 1px solid #d0d0d0;
+  border-radius: 4px;
+  padding: 12px;
+  text-align: center;
+}
+
+.esg-summary-card-title {
+  font-size: 10px;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin: 0 0 4px 0;
+}
+
+.esg-summary-card-value {
+  font-size: 20px;
+  font-weight: 700;
+  color: #2c5282;
+  margin: 0;
+  font-family: 'Courier New', monospace;
+}
+
+.esg-summary-card-subtitle {
+  font-size: 9px;
+  color: #888;
+  margin: 2px 0 0 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .esg-workbook-metadata {
+    flex-direction: column;
+    gap: 4px;
+  }
+  
+  .esg-tab {
+    padding: 4px 8px;
+    font-size: 10px;
+  }
+  
+  .esg-sheet-content {
+    padding: 12px;
+  }
+  
+  .esg-data-table {
+    font-size: 10px;
+  }
+  
+  .esg-summary-cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Loading and animation states */
+.esg-loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 200px;
+  color: #666;
+  font-style: italic;
+}
+
+.esg-fade-in {
+  animation: esgFadeIn 0.3s ease-in-out;
+}
+
+@keyframes esgFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

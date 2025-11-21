@@ -1,39 +1,39 @@
 # Use Node.js 18 Alpine
 FROM node:18-alpine
 
-# Set working directory
+# Install build dependencies
 WORKDIR /app
 
-# Install dependencies for node-gyp and other native modules
-RUN apk add --no-cache libc6-compat
+# Install packages needed for building native modules
+RUN apk add --no-cache \
+    libc6-compat \
+    python3 \
+    make \
+    g++ \
+    pkgconfig \
+    pixman-dev \
+    cairo-dev \
+    pango-dev \
+    libjpeg-turbo-dev \
+    giflib-dev
 
 # Copy package files
-COPY omnis-ui/package*.json ./
+COPY package.json package-lock.json* ./
 
-# Install dependencies
-RUN npm ci --only=production && npm cache clean --force
+# Install all dependencies with legacy peer deps
+RUN npm ci --legacy-peer-deps
 
-# Copy the application source
-COPY omnis-ui/ .
-
-# Set environment variables
-ENV NODE_ENV=production
-ENV NEXT_TELEMETRY_DISABLED=1
-ENV PORT=3000
+# Copy source code
+COPY . .
 
 # Build the application
 RUN npm run build
 
-# Create non-root user
-RUN addgroup -g 1001 -S nodejs
-RUN adduser -S nextjs -u 1001
-
-# Change ownership of the app directory
-RUN chown -R nextjs:nodejs /app
-USER nextjs
-
 # Expose port
 EXPOSE 3000
+
+# Set environment to production
+ENV NODE_ENV=production
 
 # Start the application
 CMD ["npm", "start"]
