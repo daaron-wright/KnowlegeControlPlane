@@ -1,0 +1,26 @@
+// Re-export types from local types file
+export type {
+  UserRole,
+  SavedScope,
+  DocumentRecord,
+  AssignmentTask,
+  SavedPrompt,
+  SearchExample,
+  AgentTraceStep,
+  AgentTraceRun,
+  ChecklistItem,
+  JourneyActionVariant,
+  JourneyActionFeedback,
+  JourneyAction,
+  JourneyMatcher,
+  JourneyTone,
+  JourneyStatus,
+  JourneyCopilotMessage,
+  JourneyCopilotFollowUp,
+  JourneyCopilotConfig,
+  JourneySection,
+  JourneyFrame,
+  JourneyEmptyState,
+  Journey,
+} from "@/types/dashboard";
+
