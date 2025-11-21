@@ -1,0 +1,68 @@
+
+DETAILED ASSET LEVEL ANALYSIS - COMPLETE UPDATE SUMMARY
+=======================================================
+
+Generated: 2025-08-30 10:34:21
+
+PORTFOLIO OVERVIEW:
+------------------
+Total Investments: 18
+- Bonds: 14 investments
+- Real Estate: 3 investments  
+- Infrastructure: 2 investments
+
+Total Investment Amount: £93.8m
+Total EVIC (Bonds only): £84.3b
+Portfolio Weighted Ownership: 0.111%
+
+INVESTMENT BREAKDOWN:
+--------------------
+
+BONDS (14 investments):
+   1. Green Energy Solutions Ltd          |    £2.8m |    £140m |   2.0% | PCAF: 2.0
+   2. Thames Utilities PLC                |    £3.2m |    £160m |   2.0% | PCAF: 2.2
+   3. Scottish Power Holdings             |    £2.9m |    £145m |   2.0% | PCAF: 2.1
+   4. North Sea Energy Corp               |    £3.1m |    £155m |   2.0% | PCAF: 2.2
+   5. Renewable Power UK Ltd              |    £2.7m |    £135m |   2.0% | PCAF: 2.0
+   6. Offshore Wind Holdings              |    £3.3m |    £165m |   2.0% | PCAF: 2.2
+   7. Advanced Materials Group            |    £1.8m |     £90m |   2.0% | PCAF: 2.4
+   8. Sustainable Chemicals PLC           |    £1.9m |     £95m |   2.0% | PCAF: 2.2
+   9. Green Building Materials            |    £2.0m |    £100m |   2.0% | PCAF: 2.0
+  10. Circular Economy Corp               |    £1.7m |     £85m |   2.0% | PCAF: 2.1
+  11. UK Government Green Bond            |    £4.5m |   £22.5b |  0.02% | PCAF: 2.2
+  12. UK Treasury Sustainability Bond     |    £4.2m |   £21.0b |  0.02% | PCAF: 2.2
+  13. UK Infrastructure Bond              |    £3.8m |   £19.0b |  0.02% | PCAF: 2.0
+  14. UK Climate Transition Bond          |    £4.1m |   £20.5b |  0.02% | PCAF: 2.0
+
+REAL ESTATE (3 investments):
+   1. Kings Cross Development Trust       |    £8.9m |      N/A |    75% | PCAF: 2.8
+   2. Birmingham Green Energy Hub         |    £6.7m |      N/A |    60% | PCAF: 2.9
+   3. Manchester Sustainable Housing      |    £5.4m |      N/A |    50% | PCAF: 2.6
+
+INFRASTRUCTURE (2 investments):
+   1. North Sea Wind Farm Holdings        |   £18.5m |      N/A |    25% | PCAF: 2.5
+   2. Cornwall Solar Energy Trust         |   £12.3m |      N/A |    40% | PCAF: 2.8
+
+
+DATA QUALITY ANALYSIS:
+---------------------
+- All investments have consistent PCAF scores (range: 2.0 - 2.9)
+- All investments use standard data distribution (60% Primary, 25% Secondary, 15% Estimated)
+- Government bonds have lower ownership stakes (0.02%) due to large outstanding amounts
+- Real Estate and Infrastructure investments don't have EVIC values (marked as '-')
+
+STYLING NOTES:
+--------------
+- Standard bonds: No special styling
+- Real Estate: bg-blue-50, font-semibold for name and asset class
+- Infrastructure: bg-orange-50, font-semibold for name and asset class  
+- PCAF scores ≥2.5: text-red-600 color
+- All ownership percentages are directly from Excel data
+
+TOTALS ROW:
+-----------
+The totals row should show:
+- Investment Amount: (sum of all above) = £93.8m
+- EVIC: (sum of bonds only) = £84.3b
+- Ownership: Total Investment Amount / Total EVIC = 0.111%
+- PCAF Score: 2.6 (portfolio weighted average)

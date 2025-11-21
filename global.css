@@ -1,0 +1,177 @@
+/** @import must precede all other statements */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Source+Sans+3:wght@400;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 225 60% 97%;
+    --foreground: 224 62% 14%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 224 62% 14%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 224 62% 14%;
+
+    --primary: 222 82% 43%;
+    --primary-foreground: 210 33% 98%;
+
+    --secondary: 223 50% 93%;
+    --secondary-foreground: 223 38% 24%;
+
+    --muted: 223 45% 92%;
+    --muted-foreground: 222 28% 38%;
+
+    --accent: 45 95% 62%;
+    --accent-foreground: 222 67% 16%;
+
+    --destructive: 357 79% 52%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 223 34% 86%;
+    --input: 223 34% 86%;
+    --ring: 222 82% 43%;
+
+    --radius: 1.25rem;
+
+    --sidebar-background: 225 58% 96%;
+    --sidebar-foreground: 224 50% 18%;
+    --sidebar-primary: 222 82% 43%;
+    --sidebar-primary-foreground: 210 33% 98%;
+    --sidebar-accent: 223 52% 91%;
+    --sidebar-accent-foreground: 224 42% 26%;
+    --sidebar-border: 223 32% 83%;
+    --sidebar-ring: 222 82% 43%;
+
+    --surface-base: 225 60% 97%;
+    --surface-raised: 0 0% 100%;
+    --surface-strong: 223 46% 92%;
+    --surface-muted: 223 36% 86%;
+    --surface-inverse: 223 53% 11%;
+
+    --success: 153 52% 39%;
+    --success-foreground: 155 68% 92%;
+    --warning: 38 92% 58%;
+    --warning-foreground: 28 73% 16%;
+    --info: 210 90% 48%;
+    --info-foreground: 210 100% 97%;
+
+    --banner-warning-bg: 44 93% 90%;
+    --banner-warning-border: 43 90% 62%;
+    --banner-warning-foreground: 28 73% 16%;
+    --banner-error-bg: 357 100% 95%;
+    --banner-error-border: 357 82% 63%;
+    --banner-error-foreground: 357 71% 28%;
+  }
+
+  .dark {
+    --background: 224 45% 8%;
+    --foreground: 214 32% 92%;
+
+    --card: 224 45% 12%;
+    --card-foreground: 214 32% 92%;
+
+    --popover: 224 45% 12%;
+    --popover-foreground: 214 32% 92%;
+
+    --primary: 214 96% 60%;
+    --primary-foreground: 224 45% 12%;
+
+    --secondary: 224 26% 14%;
+    --secondary-foreground: 214 32% 92%;
+
+    --muted: 224 26% 16%;
+    --muted-foreground: 214 22% 74%;
+
+    --accent: 210 48% 24%;
+    --accent-foreground: 214 32% 92%;
+
+    --destructive: 0 80% 60%;
+    --destructive-foreground: 214 32% 92%;
+
+    --border: 224 26% 20%;
+    --input: 224 26% 20%;
+    --ring: 214 96% 60%;
+
+    --sidebar-background: 224 40% 12%;
+    --sidebar-foreground: 214 32% 92%;
+    --sidebar-primary: 214 96% 60%;
+    --sidebar-primary-foreground: 223 45% 12%;
+    --sidebar-accent: 224 26% 18%;
+    --sidebar-accent-foreground: 214 32% 92%;
+    --sidebar-border: 224 26% 18%;
+    --sidebar-ring: 214 96% 60%;
+
+    --surface-base: 224 40% 12%;
+    --surface-raised: 224 32% 14%;
+    --surface-strong: 224 26% 18%;
+    --surface-muted: 224 24% 22%;
+    --surface-inverse: 213 33% 96%;
+
+    --success: 156 64% 42%;
+    --success-foreground: 144 82% 94%;
+    --warning: 38 92% 58%;
+    --warning-foreground: 28 73% 16%;
+    --info: 207 86% 64%;
+    --info-foreground: 210 100% 97%;
+
+    --banner-warning-bg: 40 86% 24%;
+    --banner-warning-border: 40 86% 44%;
+    --banner-warning-foreground: 33 82% 88%;
+    --banner-error-bg: 355 74% 24%;
+    --banner-error-border: 355 74% 46%;
+    --banner-error-foreground: 0 0% 100%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: "Source Sans 3", "Inter", ui-sans-serif, system-ui, -apple-system,
+      BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-feature-settings: "tnum" on, "cv11" on;
+    text-rendering: optimizeLegibility;
+  }
+
+  :where(p, span, li, h1, h2, h3, h4, h5, h6, a, button, label, td, th) {
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
+
+  ::selection {
+    background-color: hsl(var(--primary) / 0.18);
+    color: hsl(var(--foreground));
+  }
+
+  pre,
+  code {
+    overflow-x: auto;
+    white-space: pre;
+  }
+
+  ::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: hsl(var(--surface-base));
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--surface-strong));
+    border-radius: 9999px;
+    border: 3px solid hsl(var(--surface-base));
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--surface-muted));
+  }
+}

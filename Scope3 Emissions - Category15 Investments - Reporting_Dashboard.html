@@ -1,0 +1,289 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Scope 3 Emissions – Category 15: Investments Reporting Dashboard</title>
+<style>
+  :root{--kd-red:#FF462D;--kd-red-hover:#e03e28;--kd-text:#3D3C3C;--kd-bg:#FFFFFF;--muted:#f6f7f8;--border:#e5e7eb;--chip-bg:#fff3f2}
+  *{box-sizing:border-box}
+  body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;color:var(--kd-text);background:var(--kd-bg)}
+  header{border-bottom:4px solid var(--kd-red);background:var(--kd-bg)}
+  .container{width:min(960px,94vw);margin:0 auto;padding:16px 16px 24px}
+  h1{font-size:1.5rem;margin:.25rem 0 .5rem;color:var(--kd-text)}
+  h3.section-title{margin:1.0rem 0 .5rem;font-size:1.1rem;color:var(--kd-text)}
+
+  .table-wrap{background:#fff;border:1px solid var(--border);border-radius:10px;overflow:hidden;box-shadow:0 1px 2px rgba(0,0,0,.04);margin:.5rem 0 0.5rem}
+  table{border-collapse:collapse;width:100%;table-layout:fixed}
+  th,td{padding:10px 12px;border-bottom:1px solid var(--border);text-align:left;vertical-align:top}
+  thead th{background:var(--kd-red);color:#fff;position:sticky;top:0;z-index:1}
+  tbody tr:nth-child(even){background:var(--muted)}
+  tbody tr:hover{outline:2px solid var(--kd-red);outline-offset:-2px;background:#fff}
+  td.num{text-align:right;font-variant-numeric:tabular-nums}
+  .chip{display:inline-block;line-height:1;padding:6px 10px;border-radius:999px;font-size:12px;border:1px solid var(--kd-red);background:var(--chip-bg);color:#7a1b12}
+  .chip--org{font-weight:600}
+
+  .card{ background:#fff; border:1px solid var(--border); border-radius:10px; padding:12px; margin-bottom: 12px; }
+  .filebox{ border:1px dashed var(--border); border-radius:8px; padding:12px; background:#fcfcfc; position: relative; }
+  .filebox.dragover{ border-color: var(--kd-red); background: #fff7f6; }
+  .drop-hint{ font-size:12px; color:#6b7280; margin-top:6px; }
+  input[type=file]{ width:100%; }
+
+  .actions{ display:flex; gap:8px; flex-wrap:wrap; margin: 8px 0 16px; }
+  .actions--right{ justify-content: flex-end; }
+  .btn{ display:inline-block; background: var(--kd-red); color:#fff; padding:10px 14px; border-radius:8px; text-decoration:none; border:1px solid var(--kd-red); cursor:pointer; }
+  .btn:hover,.btn:focus{ background: var(--kd-red-hover); }
+  .btn[aria-pressed="true"]{ box-shadow: 0 0 0 3px rgba(255,70,45,.25); }
+  .btn:disabled{ opacity:.5; cursor:not-allowed; }
+
+  .hidden{ display:none !important; }
+  .u-muted{ color:#6b7280; font-size:12px; }
+  .note{ color:#6b7280; font-size:12px; margin:.25rem 0 .75rem; }
+  .filelist{ margin:6px 0 0; padding-left: 16px; font-size: 12px; color:#374151; }
+
+  .legend{ font-size:12px; color:#4b5563; }
+  .legend span{ display:inline-block; margin-right:12px; }
+  .pill{ display:inline-block; padding:2px 8px; border-radius:999px; background:#eef2ff; }
+</style>
+</head>
+<body>
+<header>
+<div class="container">
+<h1>Scope 3 Emissions – Category 15: Investments Reporting Dashboard</h1>
+</div>
+</header>
+<main class="container">
+<!-- Upload section stays on top -->
+<section aria-labelledby="upload-title" class="card">
+<h3 class="section-title" id="upload-title">Upload reports (Scope 1, 2 or 3) — multiple files allowed</h3>
+<p class="u-muted">Supported: CSV, XLSX, JSON, or PDF. You can <strong>click to select</strong> or <strong>drag &amp; drop</strong> files into the box below.</p>
+<div aria-label="Drop files here" class="filebox" id="dropZone">
+<input accept=".csv,.xlsx,.xls,.json,.pdf" id="reportFiles" multiple="" type="file"/>
+<div class="drop-hint">Choose files or drag &amp; drop here</div>
+<ul class="filelist" id="reportFilesList"></ul>
+</div>
+<div class="actions">
+<button class="btn" disabled="" id="submitBtn">Submit</button>
+</div>
+</section>
+<!-- MOVED HEADING: directly above the investments table -->
+<h3 class="section-title">Scope 3 - Category 15 - Investments</h3>
+<div class="table-wrap">
+<table aria-label="Investments" id="investmentsTable" role="table">
+<thead>
+<tr><th>Investment Name</th><th>Organization</th><th>Investment Category</th><th>Sector</th><th>Amount</th></tr>
+</thead>
+<tbody>
+<tr><td>Affordable Housing Bond</td><td><span class="chip chip--org">OrgB</span></td><td>Debt</td><td>Real Estate</td><td class="num">$9,000,000</td></tr>
+<tr><td>Blue Economy Fund</td><td><span class="chip chip--org">OrgE</span></td><td>Equity</td><td>Marine</td><td class="num">$8,400,000</td></tr>
+<tr><td>Circular Economy Ventures</td><td><span class="chip chip--org">OrgD</span></td><td>Venture Capital</td><td>Materials</td><td class="num">$3,200,000</td></tr>
+<tr><td>Clean Transport Equity</td><td><span class="chip chip--org">OrgC</span></td><td>Equity</td><td>Transportation</td><td class="num">$12,250,000</td></tr>
+<tr><td>Climate Tech Seed Fund</td><td><span class="chip chip--org">OrgF</span></td><td>Venture Capital</td><td>Technology</td><td class="num">$2,100,000</td></tr>
+<tr><td>Emerging Markets Green Bond</td><td><span class="chip chip--org">OrgC</span></td><td>Debt</td><td>Financials</td><td class="num">$6,300,000</td></tr>
+<tr><td>Green Affordable Housing REIT</td><td><span class="chip chip--org">OrgD</span></td><td>Real Estate</td><td>Real Estate</td><td class="num">$6,200,000</td></tr>
+<tr><td>Green Infrastructure Fund</td><td><span class="chip chip--org">OrgA</span></td><td>Equity</td><td>Utilities</td><td class="num">$10,000,000</td></tr>
+<tr><td>Industrial Decarbonization Fund</td><td><span class="chip chip--org">OrgA</span></td><td>Equity</td><td>Industrials</td><td class="num">$11,600,000</td></tr>
+<tr><td>Nature-Based Solutions Note</td><td><span class="chip chip--org">OrgG</span></td><td>Debt</td><td>Forestry</td><td class="num">$1,950,000</td></tr>
+<tr><td>Net-Zero Office Redevelopment</td><td><span class="chip chip--org">OrgA</span></td><td>Real Estate</td><td>Real Estate</td><td class="num">$3,750,000</td></tr>
+<tr><td>Renewable Energy Bonds</td><td><span class="chip chip--org">OrgB</span></td><td>Debt</td><td>Energy</td><td class="num">$5,000,000</td></tr>
+<tr><td>Smart Grid Infrastructure Trust</td><td><span class="chip chip--org">OrgH</span></td><td>Infrastructure</td><td>Utilities</td><td class="num">$6,800,000</td></tr>
+<tr><td>Sustainable Agriculture Fund</td><td><span class="chip chip--org">OrgA</span></td><td>Equity</td><td>Agriculture</td><td class="num">$7,500,000</td></tr>
+<tr><td>Sustainable Logistics REIT</td><td><span class="chip chip--org">OrgB</span></td><td>Real Estate</td><td>Real Estate</td><td class="num">$4,500,000</td></tr>
+<tr><td>Urban Mobility Infra Bond</td><td><span class="chip chip--org">OrgC</span></td><td>Infrastructure</td><td>Transportation</td><td class="num">$5,600,000</td></tr>
+<tr><td>Waste-to-Energy Infra Fund</td><td><span class="chip chip--org">OrgE</span></td><td>Infrastructure</td><td>Energy</td><td class="num">$7,900,000</td></tr>
+<tr><td>Water Stewardship Fund</td><td><span class="chip chip--org">OrgE</span></td><td>Private Equity</td><td>Water</td><td class="num">$4,750,000</td></tr>
+</tbody>
+</table>
+</div>
+<span id="resultsAnchor"></span>
+<section aria-live="polite" class="hidden" id="resultsSection">
+<h3 class="section-title">Missing and Imputed Data</h3>
+<p class="note">Generated from uploaded data placeholders; values are illustrative.</p>
+<div class="table-wrap">
+<table aria-label="Missing and Imputed Data" id="missingImputedTable" role="table">
+<thead>
+<tr><th>Organization</th><th>Scope</th><th>Missing Data Element</th><th>Imputation Method</th><th>Imputed Value</th></tr>
+</thead>
+<tbody id="missingImputedBody"></tbody>
+</table>
+</div>
+<div class="actions actions--right">
+<button class="btn" id="exportMissing" type="button">Export CSV</button>
+</div>
+<h3 class="section-title">Consolidated Emissions by Organization</h3>
+<div class="table-wrap">
+<table aria-label="Consolidated Emissions by Organization" id="consolidatedTable" role="table">
+<thead>
+<tr>
+<th>Organization</th>
+<th>Scope 1 Emissions</th>
+<th>Scope 2 Emissions</th>
+<th>Scope 3 Emissions</th>
+<th>Total Emissions (tCO₂e)</th>
+<th>Carbon footprint</th>
+<th>Coverage %</th>
+</tr>
+</thead>
+<tbody id="consolidatedBody"></tbody>
+</table>
+</div>
+<div class="actions actions--right">
+<button class="btn" id="exportConsolidated" type="button">Export CSV</button>
+</div>
+</section>
+<div class="actions hidden" id="bottomActions">
+<button aria-pressed="false" class="btn" id="btnSectorPCAF" type="button">Show Sector-wise Breakdown with PCAF Scores</button>
+<button aria-pressed="false" class="btn" id="btnOrgPCAF" type="button">Show Organization-wise PCAF Scores (2022–2024)</button>
+</div>
+<section aria-live="polite" class="hidden" id="pcafSectorSection">
+<h3 class="section-title">Sector-wise Breakdown with PCAF Scores</h3>
+<div class="table-wrap">
+<table aria-label="Sector-wise PCAF Scores" id="pcafSectorTable" role="table">
+<thead>
+<tr><th>Sector</th><th>Investments</th><th>Total Amount</th><th>2022</th><th>2023</th><th>2024</th></tr>
+</thead>
+<tbody id="pcafSectorBody"></tbody>
+</table>
+</div>
+<div class="actions actions--right">
+<button class="btn" id="exportPCAFSector" type="button">Export CSV</button>
+</div>
+</section>
+<section aria-live="polite" class="hidden" id="pcafOrgSection">
+<h3 class="section-title">Organization-wise PCAF Scores (2022–2024)</h3>
+<p class="legend">PCAF Data Quality Score: <span class="pill">1 = Highest quality</span> … <span class="pill">5 = Lowest quality</span></p>
+<div class="table-wrap">
+<table aria-label="Organization-wise PCAF Scores" id="pcafOrgTable" role="table">
+<thead>
+<tr><th>Organization</th><th>2022</th><th>2023</th><th>2024</th></tr>
+</thead>
+<tbody id="pcafOrgBody"></tbody>
+</table>
+</div>
+<div class="actions actions--right">
+<button class="btn" id="exportPCAFOrg" type="button">Export CSV</button>
+</div>
+</section>
+</main>
+<script>
+  // --- Drag & Drop + Change handlers to robustly enable Submit ---
+  let droppedFiles = null; // FileList from DnD (if used)
+
+  function renderFileList(files){
+    const ul = document.getElementById('reportFilesList');
+    ul.innerHTML = '';
+    if (!files) return;
+    Array.from(files).forEach(f => {
+      const li = document.createElement('li');
+      li.textContent = f.name + ' (' + Math.round(f.size/1024) + ' KB)';
+      ul.appendChild(li);
+    });
+  }
+
+  function updateSubmitState(){
+    const input = document.getElementById('reportFiles');
+    const submit = document.getElementById('submitBtn');
+    const hasInput = input && input.files && input.files.length > 0;
+    const hasDropped = droppedFiles && droppedFiles.length > 0;
+    submit.disabled = !(hasInput || hasDropped);
+  }
+
+  function wireUploadBox(){
+    const input = document.getElementById('reportFiles');
+    const dz = document.getElementById('dropZone');
+
+    // Ensure submit enables on file select
+    input.addEventListener('change', () => { droppedFiles = null; renderFileList(input.files); updateSubmitState(); });
+
+    // Drag events
+    ['dragenter','dragover'].forEach(evt => dz.addEventListener(evt, (e) =>{ e.preventDefault(); e.stopPropagation(); dz.classList.add('dragover'); }));
+    ['dragleave','drop'].forEach(evt => dz.addEventListener(evt, (e) =>{ e.preventDefault(); e.stopPropagation(); dz.classList.remove('dragover'); }));
+
+    dz.addEventListener('drop', (e) => { droppedFiles = e.dataTransfer.files; renderFileList(droppedFiles); updateSubmitState(); });
+  }
+
+  // --- Core data helpers ---
+  function parseCurrency(s){ return Number(String(s||'').replace(/[^0-9.]/g, '')) || 0; }
+  function getInvestmentsRows(){ return Array.from(document.querySelectorAll('#investmentsTable tbody tr')); }
+  function getUniqueOrganizations(){ const seen = new Set(); const orgs = []; getInvestmentsRows().forEach(tr => { const org = tr.cells[1].textContent.trim(); if (org && !seen.has(org)) { seen.add(org); orgs.push(org);} }); return orgs; }
+  function getAmountsByOrg(){ const map = new Map(); getInvestmentsRows().forEach(tr => { const org = tr.cells[1].textContent.trim(); const amt = parseCurrency(tr.cells[4].textContent.trim()); map.set(org, (map.get(org)||0)+amt); }); return map; }
+  function getAmountsBySector(){ const map = new Map(); const counts = new Map(); getInvestmentsRows().forEach(tr => { const sector = tr.cells[3].textContent.trim(); const amt = parseCurrency(tr.cells[4].textContent.trim()); map.set(sector, (map.get(sector)||0)+amt); counts.set(sector, (counts.get(sector)||0)+1); }); return { map, counts }; }
+  function totalInvestment(){ let t=0; getInvestmentsRows().forEach(tr => t += parseCurrency(tr.cells[4].textContent.trim())); return t; }
+  function formatNumber(n){ return new Intl.NumberFormat('en-US', { maximumFractionDigits: 2 }).format(n); }
+
+  function populateMissingAndImputed(){
+    const orgs = getUniqueOrganizations();
+    const amtByOrg = getAmountsByOrg();
+    const tbody = document.getElementById('missingImputedBody'); tbody.innerHTML = '';
+    orgs.forEach(org => {
+      const amt = amtByOrg.get(org) || 0;
+      const imputed = (amt / 12000); // demo
+      const method = 'Investment-weighted scaling (demo)';
+      const tr = document.createElement('tr');
+      tr.innerHTML = `<td><span class='chip chip--org'>${org}</span></td><td>Scope 3</td><td>Emissions</td><td>${method}</td><td class='num'>${formatNumber(imputed)} tCO₂e</td>`;
+      tbody.appendChild(tr);
+    });
+  }
+  function populateConsolidated(){
+    const orgs = getUniqueOrganizations();
+    const amtByOrg = getAmountsByOrg();
+    const totalAmt = totalInvestment();
+    const tbody = document.getElementById('consolidatedBody'); tbody.innerHTML = '';
+    orgs.forEach(org => {
+      const amt = amtByOrg.get(org) || 0;
+      const s1 = amt * 0.00008, s2 = amt * 0.00005, s3 = amt / 12000; // demo factors
+      const total = s1 + s2 + s3;
+      const carbonFootprint = (amt > 0) ? (total / (amt / 1_000_000)) : 0; // tCO2e per $M
+      const coverage = (totalAmt > 0) ? (amt / totalAmt * 100) : 0;        // % of invested
+      const tr = document.createElement('tr');
+      tr.innerHTML = `<td><span class='chip chip--org'>${org}</span></td>
+        <td class='num'>${formatNumber(s1)}</td>
+        <td class='num'>${formatNumber(s2)}</td>
+        <td class='num'>${formatNumber(s3)}</td>
+        <td class='num'>${formatNumber(total)}</td>
+        <td class='num'>${formatNumber(carbonFootprint)} tCO₂e/$M</td>
+        <td class='num'>${formatNumber(coverage)}%</td>`;
+      tbody.appendChild(tr);
+    });
+  }
+  function pseudoScore(str, year){ let sum=0; for (let i=0;i<str.length;i++) sum+=str.charCodeAt(i); return (sum + year) % 5 + 1; }
+  function populatePCAFOrg(){ const orgs = getUniqueOrganizations(); const tbody = document.getElementById('pcafOrgBody'); tbody.innerHTML = ''; orgs.forEach(org => { const tr = document.createElement('tr'); tr.innerHTML = `<td><span class='chip chip--org'>${org}</span></td><td class='num'>${pseudoScore(org,2022)}</td><td class='num'>${pseudoScore(org,2023)}</td><td class='num'>${pseudoScore(org,2024)}</td>`; tbody.appendChild(tr); }); }
+  function populatePCAFSector(){ const { map, counts } = getAmountsBySector(); const tbody = document.getElementById('pcafSectorBody'); tbody.innerHTML = ''; Array.from(map.keys()).sort().forEach(sector => { const amt = map.get(sector)||0, count = counts.get(sector)||0; const tr = document.createElement('tr'); tr.innerHTML = `<td>${sector}</td><td class='num'>${count}</td><td class='num'>$${new Intl.NumberFormat('en-US').format(amt)}</td><td class='num'>${pseudoScore(sector,2022)}</td><td class='num'>${pseudoScore(sector,2023)}</td><td class='num'>${pseudoScore(sector,2024)}</td>`; tbody.appendChild(tr); }); }
+
+  // CSV export helpers
+  function tableToCSV(table){ const rows = Array.from(table.querySelectorAll('tr')); return rows.map(tr => Array.from(tr.children).map(cell => { const text = cell.textContent.trim(); const escaped = '"' + text.replace(/"/g,'""') + '"'; return escaped; }).join(',')).join('\n'); }
+  function downloadCSV(filename, csv){ const blob = new Blob([csv], {type: 'text/csv;charset=utf-8;'}); const url = URL.createObjectURL(blob); const a = document.createElement('a'); a.href = url; a.download = filename; a.style.display='none'; document.body.appendChild(a); a.click(); document.body.removeChild(a); URL.revokeObjectURL(url); }
+  function exportTableCSV(tableId, filename, populateIfNeeded){ const table = document.getElementById(tableId); const tbody = table.querySelector('tbody'); if (tbody && tbody.children.length === 0 && typeof populateIfNeeded === 'function') populateIfNeeded(); const csv = tableToCSV(table); downloadCSV(filename, csv); }
+
+  function toggleSection(button, sectionId, populateFn){ const section = document.getElementById(sectionId); const show = section.classList.contains('hidden'); if (show){ populateFn(); section.classList.remove('hidden'); button.setAttribute('aria-pressed','true'); } else { section.classList.add('hidden'); button.setAttribute('aria-pressed','false'); } }
+
+  function onSubmitClicked(){
+    populateMissingAndImputed();
+    populateConsolidated();
+    document.getElementById('resultsSection').classList.remove('hidden');
+    document.getElementById('bottomActions').classList.remove('hidden');
+    document.getElementById('resultsAnchor').scrollIntoView({ behavior: 'smooth', block:'start' });
+  }
+
+  function wireCore(){
+    wireUploadBox();
+    // submit button wiring
+    document.getElementById('submitBtn').addEventListener('click', (e)=>{ e.preventDefault(); onSubmitClicked(); });
+
+    // Bottom buttons
+    document.getElementById('btnOrgPCAF').addEventListener('click', () => toggleSection(document.getElementById('btnOrgPCAF'),'pcafOrgSection', populatePCAFOrg));
+    document.getElementById('btnSectorPCAF').addEventListener('click', () => toggleSection(document.getElementById('btnSectorPCAF'),'pcafSectorSection', populatePCAFSector));
+
+    // Exports
+    document.getElementById('exportMissing').addEventListener('click', () => exportTableCSV('missingImputedTable','missing_imputed.csv'));
+    document.getElementById('exportConsolidated').addEventListener('click', () => exportTableCSV('consolidatedTable','consolidated_by_org.csv'));
+    document.getElementById('exportPCAFOrg').addEventListener('click', () => exportTableCSV('pcafOrgTable','pcaf_scores_by_org.csv', populatePCAFOrg));
+    document.getElementById('exportPCAFSector').addEventListener('click', () => exportTableCSV('pcafSectorTable','pcaf_scores_by_sector.csv', populatePCAFSector));
+  }
+
+  document.addEventListener('DOMContentLoaded', wireCore);
+</script>
+</body>
+</html>

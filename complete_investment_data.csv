@@ -1,0 +1,20 @@
+name,sector,asset_class,investment_amount,evic,ownership,pcaf_score,primary,secondary,estimated,investment_amount_formatted,evic_formatted
+Green Energy Solutions Ltd,Energy,Bond,2800000,140000000,2.0%,2.0,60%,25%,15%,£2.8m,£140m
+Thames Utilities PLC,Utilities,Bond,3200000,160000000,2.0%,2.2,60%,25%,15%,£3.2m,£160m
+Scottish Power Holdings,Utilities,Bond,2900000,145000000,2.0%,2.1,60%,25%,15%,£2.9m,£145m
+North Sea Energy Corp,Energy,Bond,3100000,155000000,2.0%,2.2,60%,25%,15%,£3.1m,£155m
+Renewable Power UK Ltd,Energy,Bond,2700000,135000000,2.0%,2.0,60%,25%,15%,£2.7m,£135m
+Offshore Wind Holdings,Energy,Bond,3300000,165000000,2.0%,2.2,60%,25%,15%,£3.3m,£165m
+Advanced Materials Group,Materials,Bond,1800000,90000000,2.0%,2.4,60%,25%,15%,£1.8m,£90m
+Sustainable Chemicals PLC,Materials,Bond,1900000,95000000,2.0%,2.2,60%,25%,15%,£1.9m,£95m
+Green Building Materials,Materials,Bond,2000000,100000000,2.0%,2.0,60%,25%,15%,£2.0m,£100m
+Circular Economy Corp,Materials,Bond,1700000,85000000,2.0%,2.1,60%,25%,15%,£1.7m,£85m
+UK Government Green Bond,Government,Bond,4500000,22500000000,0.02%,2.2,60%,25%,15%,£4.5m,£22.5b
+UK Treasury Sustainability Bond,Government,Bond,4200000,21000000000,0.02%,2.2,60%,25%,15%,£4.2m,£21.0b
+UK Infrastructure Bond,Government,Bond,3800000,19000000000,0.02%,2.0,60%,25%,15%,£3.8m,£19.0b
+UK Climate Transition Bond,Government,Bond,4100000,20500000000,0.02%,2.0,60%,25%,15%,£4.1m,£20.5b
+Kings Cross Development Trust,Materials,Real Estate Equity,8900000,-,75%,2.8,60%,25%,15%,£8.9m,-
+Birmingham Green Energy Hub,Materials,Real Estate Equity,6700000,-,60%,2.9,60%,25%,15%,£6.7m,-
+Manchester Sustainable Housing,Government,Real Estate Equity,5400000,-,50%,2.6,60%,25%,15%,£5.4m,-
+North Sea Wind Farm Holdings,Energy,Infrastructure (Project Finance),18500000,-,25%,2.5,60%,25%,15%,£18.5m,-
+Cornwall Solar Energy Trust,Energy,Infrastructure (Project Finance),12300000,-,40%,2.8,60%,25%,15%,£12.3m,-

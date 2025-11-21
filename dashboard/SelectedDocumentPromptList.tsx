@@ -1,0 +1,1 @@
+export const SelectedDocumentPromptList = () => null;

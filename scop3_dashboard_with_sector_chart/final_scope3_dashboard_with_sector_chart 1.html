@@ -1,0 +1,366 @@
+
+<!DOCTYPE html>
+
+<html>
+<head>
+<title>Scope 3 – Category 15 Emissions: Investments Analysis Dashboard</title>
+<style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        h1 { color: #2E8B57; }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
+        th { background-color: #f2f2f2; }
+        .upload-section, .graph-section, .buttons-section { margin-top: 30px; }
+        .hidden { display: none; }
+        .export-btn { float: right; margin-top: 10px; }
+    </style>
+<script>
+        function showDashboard() {
+            document.getElementById('missing-data-table').classList.remove('hidden');
+            document.getElementById('graph-section').classList.remove('hidden');
+            document.getElementById('consolidated-table').classList.remove('hidden');
+            document.getElementById('buttons-section').classList.remove('hidden');
+        }
+		function showTable1() {
+            document.getElementById('SectorWisePCAF').classList.remove('hidden');
+		}
+		function showTable2()
+		{
+            document.getElementById('OrganizationWisePCAF').classList.remove('hidden');
+        }
+    </script>
+</head>
+<body>
+<h1>Scope 3 – Category 15 Emissions: Investments Analysis Dashboard</h1>
+<div class="upload-section">
+<label for="fileUpload"><strong>Upload the Planned portfolio investments spreadsheet:</strong></label>
+<input accept=".xlsx,.xls" id="fileUpload" type="file"/>
+<button onclick="showDashboard()">Submit</button>
+</div>
+<h2>Existing Scope 3 Category 15 Investments</h2>
+<table class="dataframe table table-bordered">
+<thead>
+<tr style="text-align: right;">
+<th>Investment</th>
+<th>Organization</th>
+<th>Investment Category</th>
+<th>Sector</th>
+<th>Amount</th>
+<th>Total Emissions (tCO2e)</th>
+<th>Carbon Footprint</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Housing Bond</td>
+<td>Green Habitat Corp</td>
+<td>Debt</td>
+<td>Real Estate</td>
+<td>$9,000,000</td>
+<td>1250</td>
+<td>Medium</td>
+</tr>
+<tr>
+<td>Blue Economy Fund</td>
+<td>Oceanic Ventures</td>
+<td>Equity</td>
+<td>Marine</td>
+<td>$8,400,000</td>
+<td>980</td>
+<td>Low</td>
+</tr>
+<tr>
+<td>Circular Economy Ventures</td>
+<td>EcoCycle Partners</td>
+<td>Venture Capital</td>
+<td>Materials</td>
+<td>$3,200,000</td>
+<td>1800</td>
+<td>High</td>
+</tr>
+<tr>
+<td>Clean Transport Equity</td>
+<td>InsertTech Inc</td>
+<td>Equity</td>
+<td>Transportation</td>
+<td>$12,250,000</td>
+<td>2300</td>
+<td>High</td>
+</tr>
+<tr>
+<td>Climate Tech Seed Fund</td>
+<td>GreenTech Startups</td>
+<td>Venture Capital</td>
+<td>Technology</td>
+<td>$2,100,000</td>
+<td>1100</td>
+<td>Medium</td>
+</tr>
+<tr>
+<td>Emerging Markets Green Bond</td>
+<td>EcoCycle Partners</td>
+<td>Debt</td>
+<td>Financials</td>
+<td>$8,200,000</td>
+<td>1450</td>
+<td>Medium</td>
+</tr>
+<tr>
+<td>Green Affordable Housing REIT</td>
+<td>EcoCycle Partners</td>
+<td>Equity</td>
+<td>Real Estate</td>
+<td>$6,200,000</td>
+<td>1600</td>
+<td>Low</td>
+</tr>
+<tr>
+<td>Green Infrastructure Fund</td>
+<td>Ecoinvest Group</td>
+<td>Equity</td>
+<td>Utilities</td>
+<td>$10,000,000</td>
+<td>900</td>
+<td>Low</td>
+</tr>
+<tr>
+<td>Industrial Decarbonization Fund</td>
+<td>Ecoinvest Group</td>
+<td>Equity</td>
+<td>Industrials</td>
+<td>$11,600,000</td>
+<td>1750</td>
+<td>High</td>
+</tr>
+<tr>
+<td>Nature-Based Solutions Note</td>
+<td>ForestFuture Ltd</td>
+<td>Debt</td>
+<td>Forestry</td>
+<td>$1,950,000</td>
+<td>1050</td>
+<td>Low</td>
+</tr>
+<tr>
+<td>Net-Zero Office Redevelopment</td>
+<td>Ecoinvest Group</td>
+<td>Real Estate</td>
+<td>Real Estate</td>
+<td>$3,750,000</td>
+<td>1100</td>
+<td>Medium</td>
+</tr>
+<tr>
+<td>Renewable Energy Bonds</td>
+<td>Green Habitat Corp</td>
+<td>Debt</td>
+<td>Energy</td>
+<td>$5,000,000</td>
+<td>1450</td>
+<td>Medium</td>
+</tr>
+<tr>
+<td>Smart Grid Infrastructure Trust</td>
+<td>InfraTech Solutions</td>
+<td>Infrastructure</td>
+<td>Utilities</td>
+<td>$6,800,000</td>
+<td>1600</td>
+<td>High</td>
+</tr>
+<tr>
+<td>Sustainable Agriculture Fund</td>
+<td>Ecoinvest</td>
+<td>Equity</td>
+<td>Agriculture</td>
+<td>$7,500,000</td>
+<td>900</td>
+<td>Low</td>
+</tr>
+<tr>
+<td>Sustainable Logistics REIT</td>
+<td>Green Habitat Corp</td>
+<td>Real Estate</td>
+<td>Real Estate</td>
+<td>$7,500,000</td>
+<td>900</td>
+<td>Low</td>
+</tr>
+<tr>
+<td>Urban Mobility Infra Bond</td>
+<td>TransitTech Inc</td>
+<td>Infrastructure</td>
+<td>Transportation</td>
+<td>$5,600,000</td>
+<td>1050</td>
+<td>Medium</td>
+</tr>
+<tr>
+<td>Waste-to-Energy Infra Fund</td>
+<td>Oceanic Ventures</td>
+<td>Infrastructure</td>
+<td>Energy</td>
+<td>$7,900,000</td>
+<td>1100</td>
+<td>Medium</td>
+</tr>
+<tr>
+<td>Water Stewardship Fund</td>
+<td>Oceanic Ventures</td>
+<td>Private Equity</td>
+<td>Water</td>
+<td>$4,750,000</td>
+<td>1450</td>
+<td>Medium</td>
+</tr>
+</tbody></table>
+<div class="hidden" id="missing-data-table">
+<h2>Missing &amp; Imputed Data</h2>
+<table>
+<tr>
+<th>Organization</th>
+<th>Investment</th>
+<th>Missing Data Element</th>
+<th>Imputation Method</th>
+<th>Imputed Value</th>
+</tr>
+<!-- Placeholder rows -->
+<tr>
+<td>Tokamak Energy</td>
+<td>Fusion Energy</td>
+<td>Total Emissions (tCO2e)</td>
+<td>Historical analysis</td>
+<td>850</td>
+</tr>
+<tr>
+<td>Oxford Photovoltaics</td>
+<td>Oxford PV Asset Management Fund</td>
+<td>Total Emissions (tCO2e)</td>
+<td>Historical analysis</td>
+<td>900</td>
+</tr>
+<tr>
+<td>Kensa</td>
+<td>Kensa Manufacturing Technology</td>
+<td>Total Emissions (tCO2e)</td>
+<td>Historical analysis</td>
+<td>500</td>
+</tr>
+</table>
+<button class="export-btn">Export CSV</button>
+</div>
+<div class="hidden" id="graph-section">
+<h2>Emissions Analysis Graphs</h2>
+<h2>Existing Investments</h2>
+<p><img alt="Existing Investments vs Emissions Chart" src="Existing Investees Emissions.png" style="width:100%; max-width:800px; margin-top:20px; border:1px solid #ccc; box-shadow: 2px 2px 8px rgba(0,0,0,0.1);"/>
+<img alt="Existing Investments - Emissions by Sector Chart" src="Existing_Scope3_bySector.png" style="width:100%; max-width:800px; margin-top:20px; border:1px solid #ccc; box-shadow: 2px 2px 8px rgba(0,0,0,0.1);"/></p>
+<h2>Planned & Existing Investments Overall Impact </h2>
+<p><img alt="Existing & Planned Investments vs Emissions Chart" src="Planned - Existing Emissions.png" style="width:100%; max-width:800px; margin-top:20px; border:1px solid #ccc; box-shadow: 2px 2px 8px rgba(0,0,0,0.1);"/>
+<img alt="Existing & Planned Investments - Emissions by Sector Chart" src="Planned & Invested Emissions Sector-wise.png" style="width:100%; max-width:800px; margin-top:20px; border:1px solid #ccc; box-shadow: 2px 2px 8px rgba(0,0,0,0.1);"/></p>
+</div>
+<div class="hidden" id="consolidated-table">
+<h2>Consolidated Emissions by Organization</h2>
+<table>
+<tr>
+<th>Organization</th>
+<th>Scope 1 Emissions</th>
+<th>Scope 2 Emissions</th>
+<th>Scope 3 Emissions</th>
+<th>Total Emissions (tCO2e)</th>
+<th>Coverage %</th>
+</tr>
+<!-- Placeholder rows -->
+<tr><td>Green Habitat Corp</td><td>441</td><td>375</td><td>1877</td><td>2693</td><td>96.20%</td></tr>
+<tr><td>Oceanic Ventures</td><td>258</td><td>164</td><td>1515</td><td>1937</td><td>88.1%</td></tr>
+<tr><td>EcoCycle Partners</td><td>157</td><td>383</td><td>1696</td><td>2236</td><td>90.9%</td></tr>
+<tr><td>TransitTech Inc</td><td>232</td><td>339</td><td>1244</td><td>1815</td><td>97.8%</td></tr>
+<tr><td>GreenTech Startups</td><td>331</td><td>338</td><td>1910</td><td>2579</td><td>98.1%</td></tr>
+<tr><td>TransitTech Inc</td><td>188</td><td>450</td><td>1333</td><td>1971</td><td>93.4%</td></tr>
+<tr><td>EcoCycle Partners</td><td>239</td><td>155</td><td>1602</td><td>1996</td><td>97.3%</td></tr>
+<tr><td>EcoInvest Group</td><td>203</td><td>169</td><td>832</td><td>1204</td><td>88.7%</td></tr>
+<tr><td>ForestFuture Ltd</td><td>270</td><td>139</td><td>1559</td><td>1968</td><td>92.8%</td></tr>
+<tr><td>InfraTech Solutions</td><td>554</td><td>247</td><td>1593</td><td>2394</td><td>96.3%</td></tr>
+<tr><td>Rovco and Vaarst</td><td>437</td><td>442</td><td>1223</td><td>2102</td><td>87.0%</td></tr>
+<tr><td>Sero</td><td>346</td><td>441</td><td>1521</td><td>2308</td><td>94.6%</td></tr>
+<tr><td>Tokamak Energy</td><td>174</td><td>236</td><td>1462</td><td>1872</td><td>99.2%</td></tr>
+<tr><td>NTR</td><td>334</td><td>497</td><td>1486</td><td>2317</td><td>94.4%</td></tr>
+<tr><td>Oxford Photovoltaics</td><td>173</td><td>425</td><td>1008</td><td>1008</td><td>94.0%</td></tr>
+<tr><td>Pod Point</td><td>391</td><td>181</td><td>1686</td><td>2258</td><td>95.3%</td></tr>
+<tr><td>Kensa</td><td>588</td><td>151</td><td>1433</td><td>2172</td><td>88.0%</td></tr>
+</table>
+<button class="export-btn">Export CSV</button>
+</div>
+<br>
+<br>
+<div class="hidden" id="buttons-section">
+<button onclick=showTable1()>Sector-wise PCAF Scores</button>
+<button onclick=showTable2()>Organization-wise PCAF Scores</button>
+</div>
+<div class="hidden" id="SectorWisePCAF">
+<h2>Sector-wise Breakdown with PCAF Scores</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Sector</th>
+        <th>Investments</th>
+        <th>Total Amount</th>
+        <th>2022</th>
+        <th>2023</th>
+        <th>2024</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>Agriculture</td><td>1</td><td>7,500,000</td><td>2</td><td>3</td><td>4</td></tr>
+      <tr><td>Asset Management</td><td>2</td><td>17,400,000</td><td>1</td><td>2</td><td>2</td></tr>
+      <tr><td>Energy</td><td>2</td><td>12,900,000</td><td>2</td><td>1</td><td>3</td></tr>
+      <tr><td>Financials</td><td>1</td><td>6,300,000</td><td>4</td><td>5</td><td>1</td></tr>
+      <tr><td>Forestry</td><td>1</td><td>1,950,000</td><td>4</td><td>3</td><td>4</td></tr>
+      <tr><td>Industrials</td><td>1</td><td>11,600,000</td><td>4</td><td>3</td><td>5</td></tr>
+      <tr><td>Infrastructure</td><td>3</td><td>26,400,000</td><td>3</td><td>4</td><td>5</td></tr>
+      <tr><td>Marine</td><td>1</td><td>8,400,000</td><td>2</td><td>4</td><td>1</td></tr>
+      <tr><td>Materials</td><td>3</td><td>9,600,000</td><td>2</td><td>3</td><td>2</td></tr>
+      <tr><td>Real Estate</td><td>4</td><td>23,450,000</td><td>4</td><td>4</td><td>2</td></tr>
+      <tr><td>Technology</td><td>1</td><td>2,100,000</td><td>3</td><td>4</td><td>2</td></tr>
+      <tr><td>Transportation</td><td>2</td><td>17,850,000</td><td>5</td><td>4</td><td>3</td></tr>
+      <tr><td>Utilities</td><td>2</td><td>16,800,000</td><td>4</td><td>3</td><td>3</td></tr>
+      <tr><td>Water</td><td>1</td><td>4,750,000</td><td>5</td><td>3</td><td>2</td></tr>
+    </tbody>
+  </table>
+  <button class="export-btn">Export CSV</button>
+  </div>
+  
+  <div class="hidden" id="OrganizationWisePCAF">
+    <div class="description">
+   	<h2>Organization-Wise Data Quality Score</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Organization</th>
+        <th>2022</th>
+        <th>2023</th>
+        <th>2024</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>Green Habitat Corp</td><td>3</td><td>4</td><td>5</td></tr>
+      <tr><td>Oceanic Ventures</td><td>2</td><td>3</td><td>4</td></tr>
+      <tr><td>EcoCycle Partners</td><td>1</td><td>2</td><td>3</td></tr>
+      <tr><td>TransitTech Inc</td><td>4</td><td>5</td><td>1</td></tr>
+      <tr><td>GreenTech Startups</td><td>4</td><td>5</td><td>1</td></tr>
+      <tr><td>EcoInvest Group</td><td>5</td><td>1</td><td>2</td></tr>
+      <tr><td>ForestFuture Ltd</td><td>1</td><td>2</td><td>3</td></tr>
+      <tr><td>InfraTech Solutions</td><td>2</td><td>3</td><td>4</td></tr>
+      <tr><td>Rovco and Vaarst</td><td>1</td><td>2</td><td>3</td></tr>
+      <tr><td>Sero</td><td>4</td><td>5</td><td>1</td></tr>
+      <tr><td>Tokamak Energy</td><td>4</td><td>5</td><td>1</td></tr>
+      <tr><td>NTR</td><td>5</td><td>1</td><td>2</td></tr>
+      <tr><td>Oxford Photovoltaics</td><td>3</td><td>4</td><td>5</td></tr>
+      <tr><td>Pod Point</td><td>5</td><td>1</td><td>2</td></tr>
+      <tr><td>Kensa</td><td>1</td><td>2</td><td>3</td></tr>
+    </tbody>
+  </table>
+<button class="export-btn">Export CSV</button>
+</div>
+
+</body>
+</html>

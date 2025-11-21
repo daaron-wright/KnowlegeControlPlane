@@ -1,0 +1,575 @@
+L&G ESG Scope 3
+Workflow and agentic AI functional
+architecture
+July 2025
+              th
+Extract from 8 August session
+                                                                                                                                                                                      Data                                Investment                              Climate and nature                         Reporting
+
+
+
+Business need exploration with L&G
+Leveraging Kyndryl’s Agentic AI Framework (a self organising, dynamic system) to address individual use cases across the Institutional Retirement pricing, climate risk and
+                                                              nature modelling, and sustainable investment
+                                                                                                                                                                            AI-driven economic model definition, orchestration, specification and                    Illustrative and not exhaustive, to be
+  Agentic AI as integration layer(‘glue’) across                                                  Going beyond the basics on addressing the                                 simulation on how shifts in technology, policy, reputation, market and
+  multiple fragmented systems, removing the                                                      data quality issues, estimations and imputation                            customer behavior preferences impact companies, especially based
+                                                                                                                                                                                                                                                                      explored based on Legal & General
+          need for data centralization                                                                          of missing values                                           on their emissions profiles                                                           priorities, pain points and opportunities
+
+                                                                                                                                                                                                                                  Using AI on satellite data, sensor feeds, climate
+                                                                         Federated Data                                                                                                                                           model outputs to identify patterns and provide
+                                                                         Collection and                                                             Dynamic Transition
+                                                                                                                                                     Risk Simulation                                                              high-resolution risk maps for assets
+                                                                          Aggregation
+
+
+                                                                                                             AI Powered Data                                                                 High-Resolution
+                                                                                                            Quality Improvement                                                               Physical Risk
+                                                                                                                                                                                                Modeling
+
+                                                                                                                                                   Portfolio Optimization                                                                                                  Efficient and effective compliance with Scope 3
+                                                                      Data and Knowledge                                                                                                                                    AI - Driven Reporting
+                                                                                                                                                       with Emission                                                                                                       regulations, including horizon scanning of
+                                                                        Asset Curation                                                                                                                                        and Compliance
+                                                                                                                                                        Constraints                                                                                                        regulatory evolution
+
+    Curation of internal and external data into
+ unique knowledge & data assets (e.g. for peer                                                                                                                                          Dynamic Pricing &
+                                                                                                             Anomaly Detection
+      benchmarking, pricing, portfolio risk                                                                                                                                              Yield Calculation
+                 management etc)
+
+
+
+                                                   Timely detection of outliers and anomalies in                                        AI optimization algorithms to recommend
+                                                                                                                                                                                                                                        Agentic AI determination of climate factors affect asset valuation (e.g. learn
+                                                     the raw data feeds (internal and external),                                          portfolio adjustments that meet return
+                                                                                                                                                                                                                                       correlation between market data and Scope 3 exposure to better understand
+                                                   portfolio level data for greater trust, better risk                               objectives while minimising financed emissions
+                                                                                                                                                                                                                                                   volatility, yields, credit risk and price in appropriately)
+                                                       management and early identification of                                                 (optimization under constraint)
+                         High certainty and can be mocked up with relative ease
+
+
+
+
+Data collection and regulatory reporting
+workflow (end to end)
+                                                                                                                                    Data                         Investment            Climate and nature          Reporting
+
+
+Scope 3 as Part of ESRS Regulatory Reporting Workflow 1 of 6
+                                           End to End Workflow Perspective                                                                                                    Agentic AI Functional Design
+Scope 3 Data Acquisition                        Emissions Calculation
+•   Identify Relevant Categories                •     Apply Emission Factors
+                                                                                                                                                                               Data Acquisition Agents: Handle ERP/API
+•   Internal Data Sourcing                      •     Category Aggregation                                                                                                     integrations, interface to supplier portals etc
+•   External Data Sourcing                                                                     Reporting & Publication
+                                                                                               •        Disclosure Preparation
+                                                                                               •        Integration into Annual Report / Sustainability Report                 Data Validation Agents: Run harmonisation, QA,
+                       Scope 3 Data                                                                                                                                            anomaly detection
+                                                                        Emissions
+                        Acquisition                                     Calculation
+
+                                            Data Preparation                                                                                                                   Emission Calculation Agents: Map to Emission
+                                                                                               Reporting &
+                                              & Validation                                     Publication                                                                     Factors (EFs), perform category aggregation
+
+                                                                 Assurance & Audit Trail
+                                                                                                                                                                               Assurance Agents: Compile evidence packs, track
+     Data Preparation & Validation
+                                                                                                                                                                               lineage
+     •     Data Cleaning & Harmonisation
+     •     Data Gap Identification
+     •     Data Validation                                          Data Preparation & Validation
+                                                                    •      Internal Review                                                                                     Reporting Agents: Format, tag, and publish
+                                                                    •      External Assurance Support                                                                          disclosure
+Scope 3 as Part of ESRS Regulatory Reporting Workflow 2 of 6
+Level 0: Scope 3 Data Acquisition
+               Level 1                         Level 2                                Inputs                                  Outputs                       Data & Business Logic                     Illustrative Data Feeds
+
+Identify Relevant Categories   Category mapping to ESRS GHG           - Double materiality matrix (internal)   List of applicable Scope 3           Map internal materiality results to       - Internal ESG materiality output
+                               Protocol                               - Previous year’s Scope 3 mapping        categories with ESRS (based on IG3   GHG Protocol categories, align with       - GHG Protocol Technical Guidance
+                                                                      (internal)                               list of metrics and similar)         ESRS E1 requirements                      PDF
+                                                                      - GHG Protocol guidance (external)                                                                                      - Subset of metrics (from total in the
+                                                                                                                                                    Consider Scope 3 of Scope 3 from          standard) deemed material to the
+                                                                                                                                                    the outset and is it in or out (not       undertaking
+                                                                                                                                                    mandated by PCAF not GHG
+                                                                                                                                                    Protocol)
+Internal Data Sourcing         ERP, procurement, travel, asset        - ERP: supplier spend, product           Raw activity datasets per category   Extract relevant activity data for each   - SAP/Oracle ERP exports
+                               registers (physical, financial etc),   categories, POs                                                               category from core systems                - Concur travel logs
+                               HR, asset management and               - Procurement master data                                                                                               - HR (Workday) data
+                               investment systems                     - HR: headcount, FTE by region
+                                                                      - Asset register: owned & leased
+                                                                      assets
+External Data Sourcing         Supplier ESG Portals, Industry         - Supplier questionnaires                External datasets & EF library       API/pull data from ESG databases,         - CDP API feed (this is now licenced)
+                               Databases, emission factors (Efs)      - CDP supply chain data                                                       merge with internal for completeness      - DEFRA EF CSV
+                                                                      - Ecoinvent, DEFRA and similar                                                                                          - EcoInvent datasets
+                                                                      emission factors
+                                                                      - Industry benchmarks
+                                                                      - Scope 3 disclosures
+Scope 3 as Part of ESRS Regulatory Reporting Workflow 3 of 6
+Level 0: Data Preparation and Validation
+              Level 1                          Level 2                                Inputs                                 Outputs                          Data & Business Logic                   Illustrative Data Feeds
+
+Data Cleaning & Harmonisation   Standardise units, currencies, time   - All raw data from acquisition stage   Harmonised dataset with unified         Unit conversion (kg to tonnes, miles    - ISO unit mapping table
+                                                                                                              schema                                  to km, $ to €), temporal alignment to   - Internal vs external asset class and
+                                                                                                                                                      reporting year                          instrument look up tables
+                                                                                                              Can use common data models such
+                                                                                                              as that available in MSFT Cloud for
+                                                                                                              Sustainability
+Data Gap Identification and     Missing category/activity data        - Harmonised dataset                    Gap report (missing data flagged),      Automated completeness check; %         - Missing data log
+Remediation                     checks                                                                        missing data imputed and estimated      coverage by spend, category,
+                                                                                                                                                      geography, per and post the
+                                                                                                              Audit trail of imported and estimated   remediation
+                                                                                                              values
+                                                                                                                                                      Statistical and ML riven approach to
+                                                                                                                                                      data estimation and imputation
+                                                                                                                                                      (based on correlations, distributions
+                                                                                                                                                      etc)
+Data Validation                 Automated & manual checks             - Gap report + harmonised data          Validated dataset                       Threshold checks (e.g., year-on-year    - Historical emissions dataset
+                                                                                                                                                      change > ±20%), reconciliation with     - Finance ledger summaries
+                                                                                                                                                      finance data
+Scope 3 as Part of ESRS Regulatory Reporting Workflow 4 of 6
+Level 0: Emission Calculation
+              Level 1                   Level 2                        Inputs                              Outputs                   Data & Business Logic                   Illustrative Data Feeds
+
+Apply Emission Factors   Map activities to EF           - Validated activity data           Emissions by activity line item   Select EF by activity type, region,    - DEFRA/Ecoinvent EF table
+                                                        - EF library                                                          material; apply formula: Emissions =
+                                                        - PCAF logic for Scope 3 Category                                     Activity × EF
+                                                        15
+
+
+Category Aggregation     Aggregate to ESRS categories   - Emissions by activity             Emissions by GHG Protocol         Sum emissions by category,             - Aggregation ruleset
+                                                        - PCAF logic for Scope 3 Category   category & ESRS E1                reconcile totals, separate CO₂, CH₄,
+                                                        15                                                                    N₂O, other gases
+Scope 3 as Part of ESRS Regulatory Reporting Workflow 5 of 6
+Level 0: Assurance and Audit Trail
+              Level 1                      Level 2                            Inputs                             Outputs           Data & Business Logic                     Illustrative Data Feeds
+
+Internal Review              Cross-check with business units   - Category totals                    Approved dataset       Business unit sign-off workflow           - Review checklists
+                                                               - Source data extracts
+
+
+
+
+External Assurance Support   Prepare evidence pack             - Approved dataset                   Assurance-ready pack   Provide traceability for each figure to   - Audit log
+                                                               - Data lineage documentation                                source data and EF                        - Source data extracts
+                                                               - Limited and reasonable assurance
+                                                               standards (existing SAE3000,
+                                                               emerging ISSA500 etCV)
+Scope 3 as Part of ESRS Regulatory Reporting Workflow 6 of 6
+Level 0: Reporting & Publication
+               Level 1                          Level 2                 Inputs                      Outputs                     Data & Business Logic                Illustrative Data Feeds
+
+Disclosure Preparation             Format for ESRS        - Approved emissions data   ESRS-compliant disclosure tables   Map emissions data to ESRS E1-6      - ESRS E1-6 guidance
+                                                                                                                         templates and similar
+
+
+
+
+Integration into Annual Report /   Tagging for ESEF       - ESRS disclosures          XHTML + XBRL tagged disclosures    Apply ESEF taxonomy, validate with   - ESEF taxonomy XML
+Sustainability Report                                     - Narrative commentary                                         filing tools and submit / publish
+L&G Scope 3 Portfolio Analysis – Detailed
+Process Specification
+                                                                                                                                     Data                         Investment            Climate and nature          Reporting
+
+
+Scope 3 Portfolio Analysis (Light Green Only)
+                                           End to End Workflow Perspective                                                                                                     Agentic AI Functional Design
+Scope 3 Data Acquisition                        Emissions Calculation
+•   Identify Relevant Categories                •     Apply Emission Factors
+                                                                                                                                                                                Data Acquisition Agents: Handle ERP/API
+•   Internal Data Sourcing                      •     Category Aggregation                                                                                                      integrations, interface to supplier portals etc
+•   External Data Sourcing                                                                      Reporting & Publication
+                                                                                                •        Disclosure Preparation
+                                                                                                •        Integration into Annual Report / Sustainability Report                 Data Validation Agents: Run harmonisation, QA,
+                       Scope 3 Data                                                                                                                                             anomaly detection
+                                                                        Emissions
+                        Acquisition                                     Calculation
+
+                                            Data Preparation                                                                                                                    Emission Calculation Agents: Map to Emission
+                                                                                                Reporting &
+                                              & Validation                                      Publication                                                                     Factors (EFs), perform category aggregation
+
+                                                                        Assurance &
+                                                                         Audit Trail
+                                                                                                                                                                                Assurance Agents: Compile evidence packs, track
+     Data Preparation & Validation
+                                                                                                                                                                                lineage
+     •     Data Cleaning & Harmonisation
+     •     Data Gap Identification
+     •     Data Validation                                          Assurance & Audit Trail
+                                                                    •       Internal Review                                                                                     Reporting Agents: Format, tag, and publish
+                                                                    •       External Assurance Support                                                                          disclosure, not in scope (beyond summary
+                                                                                                                                                                                dashboard)
+                                                                                                             Data     Investment             Climate and nature          Reporting
+
+
+Scope 3 Portfolio Analysis
+                   Scope 3 Portfolio Analysis Workflow Perspective                                                   Agentic System Design
+      Scope 3 Data Acquisition                       Emissions Calculation
+      •   Identify Relevant Categories               •     Apply Emission Factors                                   Data Acquisition Agents: Handle internal and
+      •   Internal Data Sourcing                     •     Category Aggregation                                     external integrations, interface to data suppliers
+      •   External Data Sourcing                                                                                    etc
+
+                                                                                                                    Data Validation Agents: Run harmonisation, QA,
+                             Scope 3 Data                                    Emissions                              anomaly detection
+                              Acquisition                                    Calculation
+
+                                                 Data Preparation                                                   Emission Calculation Agents: Map to Emission
+                                                   & Validation                                                     Factors (EFs), perform category aggregation
+
+                                                                             Assurance &
+                                                                              Audit Trail
+           Data Preparation & Validation                                                                            Assurance Agents: Compile evidence packs, track
+           •     Data Cleaning & Harmonisation                                                                      lineage
+           •     Data Gap Identification
+                                                                         Assurance & Audit Trail
+           •     Data Validation
+                                                                         •      Internal Review
+                                                                         •      External Assurance Support
+Agentic AI Functional Design
+Prompt: Calculate my Scope 3 Category 15 (financed emissions) position for the following set of
+investments consisting of bonds, infrastructure equity and real estate equity. As part of this
+analysis, I will need to understand my ‘Scope 3 of my Scope 3’ so the emissions within the supply
+chain of my investments
+
+Use action: User is allowed up upload the portfolio investment spreadsheet. The spreadsheet
+contains the list of listing of all the bonds being invested in, the details of the infrastructure being
+invested in (e.g. renewable energy projects, transport infrastructure, etc.) and the real estate being
+invested in
+
+DAG architecture
+• Data Acquisition Agents: Handle ERP/API integrations, interface to supplier portals etc
+• Data Validation Agents: Run harmonisation, QA, anomaly detection
+• Calculation Agents: Map to Emission Factors (EFs), perform category aggregation
+• Assurance Agents: Compile evidence packs, track lineage
+• Reporting Agents: Format, tag, and publish disclosure
+1. Data acquisition agents
+Agents will need to get three types of data: Internal data, external data, and public data
+Sub-process 1.1: Collect internal portfolio data and guidance
+•    Inputs
+       •      Internal data sources - Excel input file provided by the end user: This includes bond holdings, real estate equity holdings, and infrastructure equity holdings, along with metadata for each investment: Issuer or asset name, internal
+              and external unique identifiers (e.g. ISIN, property ID), investment value or outstanding amount, ownership stake, and any internal classification (sector, geography etc), location (for physical assets), known properties of the assets
+              (e.g. utilisation, size, green design ratings etc), website of the issuers and/or operators of the investment vehicle
+       •      Internal data sources - Climate Solution team: Obtain internal guidance from the Climate Solution team - PDF file with a guidance on how to categorize or flag certain holdings (e.g. identify if a bond is green or a project-specific
+              instrument) as part of context
+       •      Internal data sources - Middle Office and Reporting team (Institutional Retirement, Asset Management): Pull in any available internal data on investee financials (for example, if L&G has internal analysis or prior data on a company’s
+              revenue or enterprise value)
+•    Processing logic
+       •      Consolidate all holdings into a unified master holdings dataset. Ensure that each investment is labelled with its type (bond, real estate equity, infrastructure equity), and link any relevant internal identifiers
+•    Outputs
+       •      A master holdings dataset, listing every in-scope investment with its key attributes and financial data. This will be the foundational dataset (as a database) for further enrichment. For example, a table with columns: Investment ID,
+              Name, Asset Class (bond/real estate/infra), Amount Invested (£), % Ownership (if applicable), Sector, etc. This output is a database for ease of merging with emissions data
+1. Data acquisition agents
+Sub-process 1.2: Obtain carbon & financial data
+•    Inputs
+       •      Internal data sources - Climate Solution team: Assume they manage relationships with carbon data vendors and maintain internal databases of climate data. Obtain
+                 •       Latest GHG emissions data for companies and assets
+                 •       Any mapping files that link L&G internal investment list to external data (e.g. matching company names or IDs) as part of vendor data/mapping responsibilities
+                 •       Proxy methodologies documentation (detailing how to estimate emissions when data is missing) and any climate scenario data relevant for later analysis.
+       •      External data sources
+                 •       Reported emission data (primary - GHG emissions data for investees: For bond issuers, use third-party data from CDP disclosures, ISS ESG Rating and Intelligence emissions data, regulatory filings. Look up both Scope 1 and 2
+                         data as that is mandatory per PCAF as well as Scope 3 where disclosed
+                 •       Supply chain data (primary) - corporate websites, regulatory filings: Crawl the websites to decompose company supply chain, assets, plants and materials
+                 •       Emission estimation data (secondary): For real estate assets (properties, infrastructure projects), we need data like energy consumption or sector emissions intensity averages. Obtain PCAF emission factor database, US and UK
+                         government websites (property, conversion data, transportation)
+                 •       Company financial metrics: To calculate attribution (what share of a company’s emissions L&G finance), we need metrics like Enterprise Value Including Cash (EVIC) for companies (the sum of market capitalization and debt, per
+                         PCAF standards), or total project value for projects. Use financial data providers (Bloomberg, ISS) or from the investees’ financial reports. For real estate assets, external valuations or property values might be required if not in internal
+                         records - assume we get this from an external service provided by Real Estate and Infrastructure Valuation Agent
+                 •       Industry benchmarks, national and emission factors: Obtain datasets for emission intensity benchmarks (e.g. average CO₂ per unit revenue or per square foot for sectors, national average building emissions, energy benchmarks,
+                         sector intensity values, regional grids carbon intensity for power consumption, etc.) from sources like the International Energy Agency (IEA), academic studies, or government databases. Get emission factor libraries (e.g. UK BEIS,
+                         DEFRA carbon conversion factors for energy, if calculating emissions from energy use) to compute emissions for properties if only energy data is available
+•    Processing logic
+       • Using the master holdings list from 1.1, map each investment to its corresponding external data. For each bond, match the issuer to the external emissions dataset (via a unique identifier like an ISIN-to-company mapping, or company name
+         matching). Leverage The Climate Solutions team’s mapping files or vendor tools here by using their cross-reference (ensuring that, e.g. a bond issued by Company X is linked to Company X’s emissions data)
+       • For real estate or infrastructure assets, determine if there is direct emissions data available (e.g. from an asset manager or operator); if not, plan and tag to use proxy data later
+       • Gather all matched emissions figures and required financial metrics (EVIC, revenues, etc.) for the investees
+•    Outputs
+     Based on the master holdings list from three key datasets emerge:
+       •      Emissions dataset - a list of companies/projects with their GHG emissions (tCO₂e) and possibly other climate metrics
+       •      Reference dataset – financial parameters for those companies/projects (EVIC, etc.), and any needed benchmark factors
+       •      A data mapping log documenting which investments were successfully matched to external data, and which were not (flagging unmapped items for follow-up in validation
+1. Data acquisition agents
+Sub-process 1.3: Integrate and initial merge
+• Inputs
+          • Internal data sources: The outputs from sub-process 1.1 (portfolio holdings) and 1.2 (emissions and reference data) -both are needed her
+          • External data sources: No new external input in this step, beyond what was gathered in 1.2
+
+• Processing logic
+          • Merge the internal and external datasets to create a unified view per investment: join the holdings table with the emissions data and financial metrics using the mapping established. After merging, each investment should have: its
+            financial attributes (investment value, etc.), the investee’s emissions (Scope 1 and 2), and the investee’s EVIC or project value
+          • Scope 3 of Scope 3 should be held separate and estimated using the inferred Scope 3 activities
+          • For any investments that could not be matched to external data (e.g., a private company with no disclosed footprint, or a small project without data), leave placeholders or default values (to be handled in validation). Ensure that the data
+            types are consistent (e.g., emissions all in the same unit, currency consistency for financial data).
+
+
+• Outputs
+          • A consolidated portfolio carbon dataset – effectively a table where each row is an investment and columns include all fields needed for emissions calculation (such as: Investment ID, Name, Asset Class, Amount Invested, % Ownership,
+            Company/Asset Emissions (tCO₂e), Company EVIC (£), etc.). Also, an initial data coverage report can be produced, summarising how many investments have full data and highlighting data gaps (for example, “85% of portfolio by value
+            has direct emissions data; 15% will need estimation”). This sets the stage for the validation phase.
+
+Example: After Phase 1, we will have a row like: Bond XYZ – £10M invested – Issuer: ABC Corp – Sector: Utilities – ABC Corp Emissions: 5,000 tCO₂e (Scope 1+2) and 25,000 tCO₂e (Scope3) – ABC Corp EVIC: £50B
+
+A row for a real estate asset will show Property 123 – £200M (75% ownership) - Building emissions: (not yet available, flagged for proxy)
+2. Data validation agents
+Sub-process 2.1: Data completeness and accuracy audit
+• Inputs
+       • 0. Internal data sources - The consolidated dataset from Process 1
+       1 ‘Get Internal Data for Validation, Imputation and Estimation’
+       • 1. Internal data sources - Middle Office Team DB: Financial figures for a cross-check that the sum of all bond positions’ values matches known totals etc
+       • 1 Internal data sources - Reporting Team DB: Leverage last year’s disclosed data or baseline for comparison
+       • 1Internal data sources - Climate Solutions Team DB: An internal database of known issues or last-known emissions for certain entities
+
+       1 ‘Get External Data for Validation, Imputation and Estimation’
+       • 1. External data sources - CDP, Bloomberg, Refinitiv etc: Alternative or secondary data sources for verification. i.e. if primary emissions data came from one vendor, we want to spot-check a few large issuers against another source (like
+           checking a company’s annual report or CDP report for the reported emissions). Also, the agent will use publicly available data for sanity checks (e.g., if a company’s revenue is known, is the emissions figure roughly plausible for that
+           industry?)
+
+Processing Logic: Perform a systematic QA sweep:
+       • 2. ‘Identify Anomalies and Inconsistencies’
+       • Identify any missing data fields: Any investment with blank emissions or missing EVIC or other needed input is catalogued (for example, “Property 123 – missing emissions data”)
+       • 2. Check for outliers or anomalies: Extremely high or low emission intensities (tCO₂e / £ invested) compared to peers. If a bond position in a small company shows an unusually large emission number, flag it for review - it could indicate
+         a data error or a mismatch
+       • 2. Ensure consistency: If the same company appears multiple times (perhaps in bonds), verify that the emissions and EVIC data are identical for each instance (avoid duplication or divergence in data for the same entity). Also verify the
+         currency and units alignment (no mixing of CO₂ scopes or units).
+       • ‘3. ‘Compare against expectation’
+       • 3 Compare aggregated figures with expectations: Compute a preliminary sum of emissions using available data to see if it’s in a reasonable range given known industry benchmarks.
+       • ‘Produce DQ report’
+       • 4 Document findings in a data quality report: Lists issues like missing values, anomalies, and preliminary data quality score. (Using PCAF’s scoring scheme, data from company disclosures = high quality, proxies = lower quality etc)
+Outputs:
+       • Output from 4 A list of data issues that need resolving (e.g. 10 investments with missing emissions, 2 outliers to double-check etc)
+       • Output from 4 An initial data quality assessment for each data point (possibly tagging each investment’s emissions data with PCAF quality grade 1-5)
+       • Output from 4 Also, an updated dataset where obvious errors have been corrected (if any minor fixes can be done immediately, like correcting a unit error). This sub-process sets the stage for targeted proxy data application and final
+         confirmation
+2. Data validation agents
+Sub-process 2.2: Apply proxy data & assumptions
+Inputs
+         1 ‘Get Internal Data for Validation, Imputation and Estimation’
+         • 1. Internal data source - Climate Solutions: Guidance documents or tools from the Climate Solutions team on how to handle missing data. This may include an internal ’Proxy Methodology Paper’ that outlines accepted approaches (for
+             example: “if a company’s emissions are missing, use the sector average emissions per revenue multiplied by the company’s revenue). Also, the team itself, which can generate proxy values using their models
+         • 1. Internal data source - Group Climate: Obtain have preferences based on regulatory expectations - e.g., to use conservative estimates or to disclose certain assumptions explicitly
+         • 1 ‘Get External Data for Validation, Imputation and Estimation’
+         • 1. External data sources - IEA, industry-average emission factors: Other secondary data identified in Phase 1 (energy benchmarks, sector intensity values, regional grids carbon intensity for power consumption, etc.). For example, if a
+             property’s actual energy usage is unknown, use average energy usage per square meter for that building type and local grid emission factor to estimate its emissions. If a company’s emissions are missing, use an emissions-to-revenue
+             ratio from a similar peer or sector average. Also, external databases like IEA or research papers for sector intensities serve as inputs.
+
+Processing logic: For each data gap identified in 2.1, fill in a reasonable estimate:
+         • 5 ‘Estimate, Impute and Correct
+         • 5. If emissions data is missing for a corporate investment, calculate a proxy e.g. multiply the company’s revenue by the average emissions per revenue for that industry 5. and region (or use known emissions of a comparable company). If
+           the company is known in size, scale by that. This yields an estimated Scope 1+2 emission figure
+         • 5. Real estate: If a real estate asset lacks measured emissions, estimate its emissions from building characteristics: use the size (square footage) * typical energy intensity (kWh/m²) * carbon factor (kgCO₂e/kWh). Adjust for occupancy or
+           efficiency class if known (for instance, if it’s known as a green-certified building, adjust downward)
+         • 5. Document each assumption clearly: e.g. ‘Company X - no reported data, used sector average intensity of 0.5 tCO₂e/£m revenue from Source Y’ or ‘Property 123 - assumed energy usage of 200 kWh/m² based on UK average office
+           benchmarks’. Apply a conservative approach to avoid underestimation (as recommended for early disclosures with data gaps) Mark these entries so that they can later be reported as estimated (this ties into transparency for TCFD
+           reporting).
+
+Outputs:
+         • An augmented portfolio dataset where all previously missing fields are now populated with either actual data or proxy estimates. The dataset now should be complete – every investment has an emissions value and other required inputs
+         • Alongside this, produce an Assumptions Register detailing each proxy and assumption used. This register will be important for assurance and disclosure (showing where data is less certain). We also update the data quality scores:
+           proxies would typically be categorized as lower quality (PCAF score 4 or 5) compared to reported data (score 1-3)
+         • The output at this stage is effectively a finalised input dataset for calculation, with full coverage and noted quality flags.
+2. Data validation agents
+Sub-process 2.3: Data verification and sign-off (asynchronous ‘human in the loop’ with an options for interim / immediate verification agents)
+Inputs
+       • Internal data sources: The now-complete dataset and the assumptions register. Also, internal stakeholders are 1) Middle Office (verifies that investment values and any financial figures align with official records (no inadvertent changes
+         during processing); 2) Climate Solutions team double-checks that proxies were applied correctly; 3) Group Climate team reviews the dataset against reporting requirements (ensuring, for instance, that any use of estimated data is
+         acceptable & will be disclosed properly)
+       • Ignore for the demo for now
+       • External data sources - issuer and operator engagement portal: Share parts of the data back with investees or use counterparty engagement to validate critical items. For example, where a proxy was used for a major holding’s
+         emissions, reaching out to that company’s sustainability team via the Portal to confirm if more recent data is available
+       • 1 ‘Get External Data for Validation, Imputation and Estimation’
+       • 1. External data sources - benchmark comparison: Alternatively, compare a sample of our results with peers or industry reports (if another asset manager published a footprint for a similar asset, do our figures seem reasonable)
+Processing Logic: Asynchronous - convene an internal review meeting or process where each key team signs off on the data. Asynchronous - agents perform the validation
+       • 6. Review and Critic Agents
+       • 6. Climate Solutions Team / Agent: Validates that the technical aspects (emissions data and proxies) are handled correctly and aligns with methodologies. They ensure the dataset is consistent with PCAF standards and that data quality
+         scores are assigned appropriately.
+       • 6. Middle Office Team / Agent: Confirm that for each investment, the financial attributes (amounts, ownership percentages) match the official books. Any discrepancies (perhaps due to valuation dates, etc.) are reconciled.
+       • 6. Institutional Retirement Reporting Team / Agent: Verifies that the dataset scope matches the intended reporting scope (e.g., if certain portfolios were meant to be included/excluded) and that the outputs can roll up to the level needed
+         for disclosure (for instance, if they will report at an aggregate institutional level, ensure all relevant assets are included exactly once).
+       • 6. Group Climate Team / Agent: Checks the dataset against regulatory expectations: for instance, if the TCFD report requires year-on-year changes, do we have last year’s data to compare; if required to disclose data quality or
+         methodologies, is the info recorded. They might also ensure that scenario analysis data (outside this dataset) remains consistent (though scenario analysis is separate, no conflicting numbers).
+       • Address any feedback: e.g., if a proxy seems too high-level, perhaps refine it; if an asset should be classified differently, adjust that classification.
+Outputs:
+       • Output from 6 Validated and approved dataset (final input for calculations). At this point, we have effectively a green-light to proceed to emission calculations, with confidence in the data. All investments have emissions data (actual or
+         estimated) and all inputs are vetted
+       • The finalized assumptions log and a data quality summary. This could include metrics like “% of portfolio emissions based on reported data vs estimated” which might be disclosed or at least noted internally. The sign-off from relevant
+         teams is recorded (for governance purposes, showing that multiple lines of defence have reviewed the data). By the end of Phase 2, the risk of errors is minimized
+3. Emission calculation
+Sub-process 3.1: Calculate Emissions for Corporate Bonds
+Inputs
+          • Internal data sources: inputs come directly from the validated dataset of Phase 2
+
+Processing Logic:
+          • For corporate bonds and listed equity holdings we have: the investment value (e.g. amount of bond holding), the enterprise value (EVIC) of the issuer, and the issuer’s GHG emissions (Scope 1 and 2). These inputs come directly from the validated
+            dataset of Phase 2
+          • Method & Processing Logic: We apply the PCAF attributed emissions formula. For each corporate issuer::
+
+
+
+
+          • For example, if we own 1% of a company (by value), we assume responsibility for 1% of that company’s emissions
+
+          • We ensure to use the same emissions figure for the company whether we hold equity or debt, to avoid double counting. If the firm has multiple securities in the portfolio (e.g., we hold both bond and equity of Company X), we calculate emissions for
+            each holding and then sum them – effectively still getting (bond value + equity value)/EV * emissions, which is total exposure fraction times emissions (same result as if done once combined). We need to be careful not to count the company twice
+            in aggregate results.
+          • If any company emissions include Scope 3 (not typical unless explicitly intended), we would handle them separately to avoid mixing scopes. In general, we stick to Scope 1 and 2 for the financed emissions footprint as per common practice.
+            However, in this case L&G wants to see Scope 3 in the final output
+          • For sovereign bonds (not explicitly mentioned, but if any government bonds were present, PCAF has a different method. For this mock up
+          • The calculation is performed programmatically for all relevant rows. After computing each, we sum up emissions by issuer, by sector, etc., as needed.
+
+• Outputs: Financed emissions for each corporate issuer investment, typically expressed in tons CO₂e.
+        • We can aggregate these at various levels for reporting: e.g., total financed emissions from corporate bonds, total from listed equities (if any), and combined. We also compute an emissions intensity metric for this segment, such as tons CO₂e per £
+            million invested, to facilitate comparisons and to meet any disclosure requirement for intensity. For instance, if our total financed emissions in this category is 50,000 tCO₂e on £5,000M invested, the intensity is 10 tCO₂e/£m. Another metric is
+            Weighted Average Carbon Intensity (WACI), but that’s a different calculation (often required by TCFD, but WACI uses emissions/ revenue weighted by portfolio weight – which could be computed separately if needed). The primary output is
+            absolute emissions attributable to our financing of corporates, in a tabular form ready to aggregate with other asset classes. We note the portion of these emissions that were based on estimated data (from the data quality info, e.g., “5% of this total
+            is derived from proxy data”), for transparency1
+3. Emission calculation
+Sub-process 3.2: Calculate Emissions for Real Estate Equity
+Inputs
+         • Internal data sources: inputs come directly from the validated dataset of Phase 2
+
+Processing Logic:
+         • For each property asset, we have either actual operational emissions data or an estimated emissions figure (from Phase 2, likely calculated via energy use or proxy). We also have our ownership share in the asset (often 100% if wholly owned, or
+           some percentage if co-owned). In lieu of EVIC (since a building isn’t a company with debt/equity split in the same way), the attribution factor is the ownership percentage or financed fraction of the asset’s value.
+         • Method & Processing Logic: Formally, for each property p:
+
+
+
+
+         • The Property Emissions would ideally be the sum of Scope 1 and 2 emissions from building operations (e.g., fuel combustion on-site, purchased electricity) over a year. We ensure those emissions are either measured (from utility data, fuel usage)
+           or estimated via the proxies applied earlier. If properties are held via a property company or fund structure, but essentially we have look-through to the asset, we use the same approach.
+         • For each property, if we had to compute emissions via energy, we do: Energy use (kWh) × carbon factor (kgCO₂e/kWh) for each energy type, summing to total tCO₂e3. (This would have been done in data acquisition or validation step for proxies;
+           here we just use the result).
+         • No additional financial factor like EVIC is needed since we’re directly allocating by ownership. The “investment value” in a sense is proportional to ownership anyway. If needed, we could also check consistency by taking (our investment value /
+           property value) as the fraction – it should equal our ownership share. If not, that implies perhaps leverage on the property; however, since we are equity owners, PCAF would treat it as if we finance that share of emissions fully.
+         • We aggregate emissions across all real estate assets
+
+• Outputs: Financed emissions for each real estate investment, typically expressed in tons CO₂e.
+         • Financed emissions from real estate portfolio (tCO₂e). This could be broken down by property or summed. Likely we’ll report an aggregate figure for real estate investments. Additional outputs might include the breakdown by type of emissions
+           (e.g., electricity vs gas usage contributions) if needed internally, and an intensity metric like kg CO₂e per square meter across the portfolio to align with any real estate benchmarks
+         • for external disclosure, usually the total financed emissions attributed to real estate holdings is the key number. We again record the PCAF data quality (perhaps many property emissions might be estimated if direct data was unavailable). If any
+           properties were only partially owned, that is already accounted in the calculation by the share.
+3. Emission calculation
+Sub-process 3.3: Calculate Emissions for Infrastructure Equity
+Inputs
+         • Internal data sources: inputs come directly from the validated dataset of Phase 2
+
+Processing Logic:
+         • For each project, we should have an emissions figure (either reported by the project operator or estimated via proxies, depending on data availability from Phase 2) and our ownership percentage or share of financing. If the infrastructure
+           investment is through a fund, we may have to look through to underlying projects proportionally.
+         • Method & Processing Logic: PCAF’s project finance methodology is similar to bonds : allocate based on share of total project cost financed. For each project j:
+
+
+
+
+         • This mirrors the approach for real estate, using share of equity or loan in the project as attribution. If we provided, say, 20% of the capital for an infrastructure project, we take responsibility for 20% of its annual emissions.
+         • Project Emissions should cover operational emissions of the infrastructure. For example, if it’s a renewable energy project, operational emissions might be low (mostly maintenance vehicles, etc.), whereas a transportation infrastructure (like a toll
+           road) might have more significant operational footprint (energy use for lighting, etc.). If it’s a power generation project (e.g., a gas power plant), the combustion emissions would be the major contributor. We use whatever data is available; if none,
+           we use industry proxy (like emissions per MW for similar plants, etc.).
+         • Ensure that any debt vs equity distinction in project finance is considered: if our investment is equity and the project also has loans, PCAF would still have us count our portion of emissions based on total project value financed. In practice, since
+           we’re likely calculating for “infrastructure equity”, we assume equity share as the proportion. (If there were project loans we provided, it would be similar calculation treating loan as part of financing).
+         • Compute for each project and sum up.
+
+• Outputs: Financed emissions for each infrastructure equity investment (project finance), typically expressed in tons CO₂e
+         • Financed emissions from infrastructure investments (tCO₂e). Again, aggregated as needed (total for this category). We might also note project-level results internally, especially if we want to identify high emission projects vs low (e.g., a list: Project
+           A – 1,000 tCO₂e, Project B – 0 tCO₂e if it’s a wind farm, etc.). This could feed into future strategy (which projects to decarbonise)
+         • For reporting, likely the total figure is disclosed, possibly with qualitative commentary on the nature of those assets. Intensity metrics here are less standard, but one could compute something like tCO₂e per £m invested in infrastructure for internal
+           comparison.
+Scope 3 insight and decision making
+Scope 3 as Part of Sustainable Investment, Climate Risk Management and Portfolio Management Decision
+Making - Candidates (Illustrative)
+Hypothesis (testable statement)                                                      Key Data Inputs                               Modelling / Analytics Required
+Climate adjusted financial metrics (e.g. emissions-adjusted yield curves): Using     Bond yield curves by issuer                   - Regression of yield spreads vs Scope 3 intensity controlling for credit risk
+corporate bonds asasn example, issuers of such bonds with high Scope 3               - Scope 3 intensity (tCO₂e / $ revenue)       - Scenario analysis on carbon pricing impacts on refinancing costs
+intensity will see steeper yield curves due to anticipated transition risk premia.   - Sector decarbonisation pathways             - Build adjusted yield curves with risk premia
+                                                                                     - Carbon price forecasts
+
+
+Portfolio Value-at-Risk (VaR) uplift from Scope 3 transition scenarios:              - Portfolio holdings                          - Climate stress testing (e.g., PACTA, MSCI CVaR) with Scope 3 included
+Integrating Scope 3 transition shocks increases portfolio VaR, leading to            - Issuer Scope 1–3 data                       - Monte Carlo simulation of carbon price shocks
+allocation shifts.                                                                   - Transition risk scenarios (NGFS)            - Sensitivity analysis of VaR by sector
+                                                                                     - Sector elasticity to carbon prices
+
+
+Physical risk correlation with Scope 3 hotspots: Assets in sectors with high         - Physical risk maps (flood, heat, drought)   - Overlay Scope 3 upstream geography with climate hazard layers
+Scope 3 also face higher physical risk to operations/value chains, raising           - Supplier geolocation data                   - Bayesian network linking supply disruption to credit risk
+default risk.                                                                        - Scope 3 category breakdown                  - Correlation analysis between hazard exposure and Scope 3 intensity
+
+
+
+
+Sector rotation strategy based on Scope 3 abatement cost curves: Shifting            - MAC curves by sector                        - Optimisation: maximise expected return subject to carbon budget
+portfolio weight to sectors where marginal abatement cost (MAC) of Scope 3 is        - Scope 3 baselines                           - Game-theoretic modelling of sector decarbonisation
+lowest generates outperformance in tightening policy environments.                   - Policy tightening probability
+Climate adjusted financial metrics - from George to build and layer
+                                                                                                                               Cash Flows – Top Down
+      Traditional Climate Risk Measurement                      Measure Type      Yield   Total   2025            2026         2027     2028            2029   2030           2031       2032    2033    2034      2035          2036          2037          2038          2039          2040
+
+              is a top-down exercise
+                                                        Traditional
+
+ Issuer                                                 Climate RCP 2.6
+
+                                                        Climate RCP 4.5
+
+                                                        Climate RCP 8.0
+
+
+           AI enables granular estimates of climate and
+           transition hazards by geography and asset –                                                                                                                                                    Aggregate to create firm
+              even if the data is not readily available                                                                                                                                                   level view of climate risk
+                 Leverage AI to generate
+                  granular inventory of                          Physical Risks
+               issuer assets and revenue                                                                                                                                             Cash Flows – Bottom Up
+                   generating entities
+                                                                                                                  Asset Name                   Measure Type           Yield      Total    2025   2026   2027    2028      2029          2030          2031          2032          2033     2034
+
+                                                                                                         Office                       Climate RCP 2.6
+
+                                                                                                         Plant 1                      Climate RCP 2.6
+           Assets           Map assets to                  Transition Risks
+                           location specific                                                             Plant 2                      Climate RCP 2.6
+          Offices            physical and                        Litigation                              Raw Material A               Climate RCP 2.6
+                            transition risks
+                                                                                                         Office                       Climate RCP 4.5
+                                                                 Energy Costs
+          Plants                                                                                         Plant 1                      Climate RCP 4.5
+
+                                                                 Policy                                  Plant 2                      Climate RCP 4.5
+
+                                                                                                         Raw Material A               Climate RCP 4.5
+          Supply Chain
+                                                                 Technology
+                                                                                                         Office                       Climate RCP 8.0
+
+                                                                                                         Plant 1                      Climate RCP 8.0
+          Raw Materials                                          Reputation
+                                                                                                         Plant 2                      Climate RCP 8.0
+                          Leverage AI Data                                                               Raw Material A               Climate RCP 8.0
+                          pipelines to ingest
+                           climate data and     Climate Models & Damage Functions
+                          damage functions
+                                                         Gareth’s Team
+
+ Data From                                                 Modelling
+    IM                                                    Calculations
+                                    Validation                                                               Data sent to group
+
+Directly Sourced Data
+                                                                                            Transformation
+
+
+                                                      Orchestration
+
+
+                                                  Enabling additional insights
+
+
+Having highly paid/skilled people working value
+                     add                             Enables better insight from you data
+
+                                                                                                                                  27
+
