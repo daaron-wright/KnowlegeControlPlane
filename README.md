@@ -1,96 +1,89 @@
-# Omnis Demo - Frontend Only
+## Key Packages
 
-🎯 **This repository has been simplified to run the frontend without requiring any backend services or AI agents.**
+Install dependencies with `pnpm install` (lockfile provided). Required runtime packages:
 
-The Omnis Demo frontend now runs in **demo mode** with intelligent mock responses, providing the full user experience without complex backend setup.
+- `react`, `react-dom`, `react-router-dom`
+- `lucide-react` for icons
+- `recharts` for dashboards
+- Radix primitives (via UI kit) already wrapped inside the repo
 
-## Quick Start
+## Repository Layout
 
-1. **Navigate to the frontend directory:**
-   ```bash
-   cd omnis-ui
-   ```
+```
+client/
+  App.tsx                         # App shell + router
+  main.tsx                        # Vite entry
+  components/
+    dashboard/
+      DocumentIntelligenceShowcase.tsx
+      DocumentSelectionPanel.tsx
+      ContextualInsightSpotlight.tsx
+      GlobalSearchPanel.tsx
+      ...
+    layout/                       # Header, LeftRail, MainLayout wrappers
+    ui/                           # Design-system primitives (Button, Tabs, Badge, etc.)
+  context/layout-context.tsx      # Workspace context + toast utilities
+  data/dashboard.ts               # Mocked scopes, prompts, documents, charts
+  pages/Index.tsx                 # Home route wiring components together
+shared/api.ts                     # Fetch helpers (stubbed)
+tailwind.config.ts                # Tailwind tokens + plugins
+vite.config.ts                    # Build tooling
+```
 
-2. **Install dependencies:**
-   ```bash
-   npm install --legacy-peer-deps
-   ```
+## Core Components
 
-3. **Start the development server:**
-   ```bash
-   npm run dev
-   ```
+| Component | Responsibility |
+| --- | --- |
+| `DocumentIntelligenceShowcase` | Orchestrates the selection, prompting, contextual insight spotlight, charts, and highlights for a given query/role. Gating ensures insights render only after prompting succeeds. |
+| `DocumentSelectionPanel` | Single-column selector with inline prompt + focus controls. Tracks selected/prompted documents and feeds the spotlight. |
+| `ContextualInsightSpotlight` | Tabbed card (Insight / Evidence / Plan / Scope) summarizing AI output, metadata, recommended actions, and scope filters. |
+| `GlobalSearchPanel` | Hero search form with scopes, saved prompts, and example queries. |
+| `LayoutContext` | Provides role, scope, toast handlers, and shared state required by downstream components. |
 
-4. **Access the application:**
-   Open [http://localhost:3000](http://localhost:3000) in your browser
+Supporting data & utilities live in `client/data` (mock data sets) and `client/lib/formatters.ts` (date/confidence helpers).
 
-5. **Login with demo credentials:**
-   - Email: `pedro.clem@kyndryl.com`
-   - Password: `pedro.clem`
+## Running the Workspace Locally
 
-## Alternative Quick Start
-
-Use the provided startup script:
 ```bash
-./start-frontend.sh
+pnpm install
+pnpm dev
 ```
 
-## What's Included
+Vite serves the app on http://localhost:5173 (or the next available port).
 
-✅ **Complete Frontend Experience** - All original UI/UX preserved  
-✅ **Intelligent Mock Responses** - Context-aware AI responses  
-✅ **Dashboard Integration** - All visualizations and analytics work  
-✅ **Multi-scenario Support** - Health, security, logistics demos  
-✅ **Zero Backend Dependencies** - No Docker, databases, or servers needed  
+## Integrating Components
 
-## Demo Features
+1. **Copy Core Files**: Bring over the dashboard components under `client/components/dashboard`, the shared layout pieces you need, and the supporting utilities (`client/lib`, `client/context/layout-context.tsx`).
+2. **Provide the Design System**: Ensure the consuming app includes the UI primitives in `client/components/ui` and Tailwind tokens from `client/global.css` / `tailwind.config.ts`. These components expect Tailwind classes to be available.
+3. **Wrap in `LayoutContext`**: Upstream application must initialize `<LayoutContext.Provider>` with the fields defined in `client/context/layout-context.tsx` (role, toast handler, scope state, etc.). The existing implementation in `client/App.tsx` demonstrates the provider wiring.
+4. **Routing & Toasts**: `DocumentIntelligenceShowcase` navigates via `useNavigate`. Keep React Router in place or adapt navigation + toast utilities if embedding elsewhere.
+5. **Provide Data Models**: Pass real `DocumentRecord[]`, `SavedScope`, prompts, and chart data that follow the interfaces in `client/types/dashboard.ts`. Replace the mocks in `client/data/dashboard.ts` with live data sources or API calls.
+6. **Charts Dependency**: Ensure Recharts is installed and the theme tokens exist. Charts expect responsive parents; keep them in flex/grid containers similar to `DocumentIntelligenceShowcase`.
+7. **Example Mount**:
 
-### Supported Use Cases
-- **Autonomous Truck Performance** - Ask about truck performance to trigger dashboards
-- **Health & Medical Analysis** - Healthcare data insights and tracking
-- **Border Control & Security** - Security monitoring and compliance
-- **Natural Disaster Response** - Emergency management and risk assessment
+```tsx
+import { LayoutProvider } from "./providers/LayoutProvider"; // implement provider using LayoutContextValue
+import { DocumentIntelligenceShowcase } from "./components/dashboard/DocumentIntelligenceShowcase";
 
-### Test Prompts
-Try these to see different features:
-- "Show today's autonomous truck performance with insights from Gatik, NVIDIA, and Applied Intuition"
-- "What's the current health situation?"
-- "Show me border security status"
-- "Any natural disaster alerts?"
-
-## Project Structure
-
-```
-L-G-ESGDemo/
-├── omnis-ui/                    # Main Next.js frontend application
-│   ├── app/                     # Next.js app router pages
-│   ├── components/              # React components
-│   ├── lib/                     # Utilities and providers
-│   │   ├── mock-letta-chat-provider.tsx  # Mock chat functionality
-│   │   └── mock-letta-client.ts          # Mock API client
-│   └── ...
-├── README.md                    # This file
-├── README-frontend-only.md      # Detailed setup instructions
-├── CHANGES-SUMMARY.md           # Complete list of modifications
-└── start-frontend.sh           # Quick start script
+export function DocumentWorkspace() {
+  return (
+    <LayoutProvider>
+      <DocumentIntelligenceShowcase
+        query={"Production deviation detected"}
+        role="R&D"
+        documents={documentsFromApi}
+        activeScope={activeScope}
+      />
+    </LayoutProvider>
+  );
+}
 ```
 
-## Key Features
+## Handoff Checklist
 
-- **Instant Setup** - Ready to demo in under 5 minutes
-- **Full Functionality** - All UI components and interactions work
-- **Smart Responses** - Context-aware mock AI responses
-- **Dashboard Triggers** - Specific keywords activate visualizations
-- **Portable** - Runs anywhere Node.js is available
-
-## For Developers
-
-This version demonstrates how to:
-- Create intelligent mock responses for AI chat interfaces
-- Maintain full UI/UX while removing backend dependencies
-- Implement context-aware demo modes
-- Preserve dashboard and visualization functionality
-
----
-
-**Note:** The original backend components (Docker, Letta agent, Supabase) have been removed. If you need the full-stack version, please check the git history or contact the development team.
+- [ ] Install dependencies with `pnpm install`
+- [ ] Ensure Tailwind config + PostCSS settings are merged into the host app
+- [ ] Mount `LayoutContext` provider and wire toast notifications
+- [ ] Replace mock data with API integrations
+- [ ] Validate Recharts styling after theme integration
+- [ ] Run `pnpm dev` (or `pnpm build`) to confirm compiling without type errors
