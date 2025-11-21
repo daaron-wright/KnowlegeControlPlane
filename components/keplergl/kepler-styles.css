@@ -1,0 +1,32 @@
+/* Import Kepler.gl styles */
+@import url("https://unpkg.com/kepler.gl/dist/keplergl.min.css");
+
+.kepler-gl {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.kepler-gl .map-container {
+  z-index: 1;
+  position: relative;
+}
+
+/* Hide some UI elements we don't need */
+.kepler-gl .side-panel--container {
+  z-index: 100;
+  width: 300px; /* Adjust as needed */
+}
+
+/* Optional: Customize appearance */
+.kepler-gl .map-style-selector__item {
+  transition: all 0.4s ease;
+}
+
+.kepler-gl .map-style-selector__item:hover {
+  transform: scale(1.05);
+}
