@@ -1,0 +1,2076 @@
+[
+  {
+    "id": "N0",
+    "type": "custom",
+    "position": {
+      "x": -1200,
+      "y": -400
+    },
+    "data": {
+      "label": "Orchestrator",
+      "color": "#ea580c",
+      "description": "Prevents burst-induced timeouts and cost spikes by managing concurrency and enforcing execution budgets.",
+      "details": [
+        "Tool: orchestrator.manage_flow",
+        "Process: Workflow step",
+        "Output: Next stage data",
+        "Async: false",
+        "Agent: Orchestration Agent"
+      ],
+      "metrics": {
+        "Status": "idle",
+        "Confidence": "95%"
+      },
+      "processingTime": 1.0,
+      "processingState": "idle",
+      "logs": [
+        {
+          "timestamp": "2025-11-10T10:00:00Z",
+          "level": "INFO",
+          "message": "Orchestrator initiated"
+        }
+      ],
+      "config": {
+        "version": "1.0.0",
+        "timeout": "5s",
+        "retries": 2
+      },
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "input": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "input"
+        ]
+      },
+      "outputSchema": {
+        "type": "object",
+        "properties": {
+          "output": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "output"
+        ]
+      }
+    }
+  },
+  {
+    "id": "N1",
+    "type": "custom",
+    "position": {
+      "x": -600,
+      "y": -400
+    },
+    "data": {
+      "label": "Parse Intent",
+      "color": "#ea580c",
+      "description": "Converts the user message into structured parameters (study, run window, doc types, task).",
+      "details": [
+        "Tool: intent.parse_query",
+        "Process: Workflow step",
+        "Output: Next stage data",
+        "Async: false",
+        "Agent: Intent Parser Agent"
+      ],
+      "metrics": {
+        "Status": "idle",
+        "Confidence": "95%"
+      },
+      "processingTime": 1.0,
+      "processingState": "idle",
+      "logs": [
+        {
+          "timestamp": "2025-11-10T10:00:00Z",
+          "level": "INFO",
+          "message": "Parse Intent initiated"
+        }
+      ],
+      "config": {
+        "version": "1.0.0",
+        "timeout": "5s",
+        "retries": 2
+      },
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "input": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "input"
+        ]
+      },
+      "outputSchema": {
+        "type": "object",
+        "properties": {
+          "output": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "output"
+        ]
+      }
+    }
+  },
+  {
+    "id": "N2",
+    "type": "custom",
+    "position": {
+      "x": 0,
+      "y": -400
+    },
+    "data": {
+      "label": "Access Scope",
+      "color": "#dc2626",
+      "description": "Enforces least privilege early to ensure secure data access.",
+      "details": [
+        "Tool: access.scope_control",
+        "Process: Workflow step",
+        "Output: Next stage data",
+        "Async: false",
+        "Agent: Security Agent"
+      ],
+      "metrics": {
+        "Status": "idle",
+        "Confidence": "95%"
+      },
+      "processingTime": 1.0,
+      "processingState": "idle",
+      "logs": [
+        {
+          "timestamp": "2025-11-10T10:00:00Z",
+          "level": "INFO",
+          "message": "Access Scope initiated"
+        }
+      ],
+      "config": {
+        "version": "1.0.0",
+        "timeout": "5s",
+        "retries": 2
+      },
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "input": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "input"
+        ]
+      },
+      "outputSchema": {
+        "type": "object",
+        "properties": {
+          "output": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "output"
+        ]
+      }
+    }
+  },
+  {
+    "id": "N3",
+    "type": "custom",
+    "position": {
+      "x": 600,
+      "y": -400
+    },
+    "data": {
+      "label": "Cache Results",
+      "color": "#22c55e",
+      "description": "Provides sub-second responses for repeated tasks by caching results.",
+      "details": [
+        "Tool: cache.store",
+        "Process: Workflow step",
+        "Output: Next stage data",
+        "Async: false",
+        "Agent: Cache Agent"
+      ],
+      "metrics": {
+        "Status": "idle",
+        "Confidence": "95%"
+      },
+      "processingTime": 1.0,
+      "processingState": "idle",
+      "logs": [
+        {
+          "timestamp": "2025-11-10T10:00:00Z",
+          "level": "INFO",
+          "message": "Cache Results initiated"
+        }
+      ],
+      "config": {
+        "version": "1.0.0",
+        "timeout": "5s",
+        "retries": 2
+      },
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "input": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "input"
+        ]
+      },
+      "outputSchema": {
+        "type": "object",
+        "properties": {
+          "output": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "output"
+        ]
+      }
+    }
+  },
+  {
+    "id": "N4",
+    "type": "custom",
+    "position": {
+      "x": 1200,
+      "y": -400
+    },
+    "data": {
+      "label": "Retrieve",
+      "color": "#7c3aed",
+      "description": "Performs dense retrieval over indexed documents and tables.",
+      "details": [
+        "Tool: search.dense_retrieval",
+        "Process: Workflow step",
+        "Output: Next stage data",
+        "Async: false",
+        "Agent: Retrieval Agent"
+      ],
+      "metrics": {
+        "Status": "idle",
+        "Confidence": "95%"
+      },
+      "processingTime": 1.0,
+      "processingState": "idle",
+      "logs": [
+        {
+          "timestamp": "2025-11-10T10:00:00Z",
+          "level": "INFO",
+          "message": "Retrieve initiated"
+        }
+      ],
+      "config": {
+        "version": "1.0.0",
+        "timeout": "5s",
+        "retries": 2
+      },
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "input": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "input"
+        ]
+      },
+      "outputSchema": {
+        "type": "object",
+        "properties": {
+          "output": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "output"
+        ]
+      }
+    }
+  },
+  {
+    "id": "N10",
+    "type": "custom",
+    "position": {
+      "x": 1800,
+      "y": -1900
+    },
+    "data": {
+      "label": "Content Expand",
+      "color": "#3b82f6",
+      "description": "Improves retrieval quality and explainability by expanding context.",
+      "details": [
+        "Tool: content.expand",
+        "Process: Workflow step",
+        "Output: Next stage data",
+        "Async: false",
+        "Agent: Expansion Agent"
+      ],
+      "metrics": {
+        "Status": "idle",
+        "Confidence": "95%"
+      },
+      "processingTime": 1.0,
+      "processingState": "idle",
+      "logs": [
+        {
+          "timestamp": "2025-11-10T10:00:00Z",
+          "level": "INFO",
+          "message": "Content Expand initiated"
+        }
+      ],
+      "config": {
+        "version": "1.0.0",
+        "timeout": "5s",
+        "retries": 2
+      },
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "input": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "input"
+        ]
+      },
+      "outputSchema": {
+        "type": "object",
+        "properties": {
+          "output": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "output"
+        ]
+      }
+    }
+  },
+  {
+    "id": "N5",
+    "type": "custom",
+    "position": {
+      "x": 1800,
+      "y": -1400
+    },
+    "data": {
+      "label": "Re-Rank",
+      "color": "#7c3aed",
+      "description": "Cuts noise before pulling information chunks; improves retrieval quality and explainability.",
+      "details": [
+        "Tool: rerank.results",
+        "Process: Workflow step",
+        "Output: Next stage data",
+        "Async: false",
+        "Agent: Ranking Agent"
+      ],
+      "metrics": {
+        "Status": "idle",
+        "Confidence": "95%"
+      },
+      "processingTime": 1.0,
+      "processingState": "idle",
+      "logs": [
+        {
+          "timestamp": "2025-11-10T10:00:00Z",
+          "level": "INFO",
+          "message": "Re-Rank initiated"
+        }
+      ],
+      "config": {
+        "version": "1.0.0",
+        "timeout": "5s",
+        "retries": 2
+      },
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "input": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "input"
+        ]
+      },
+      "outputSchema": {
+        "type": "object",
+        "properties": {
+          "output": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "output"
+        ]
+      }
+    }
+  },
+  {
+    "id": "N6",
+    "type": "custom",
+    "position": {
+      "x": 1800,
+      "y": -900
+    },
+    "data": {
+      "label": "Cost Tracker",
+      "color": "#22c55e",
+      "description": "Records per-node cost/latency; enforces budgets.",
+      "details": [
+        "Tool: cost.monitor",
+        "Process: Workflow step",
+        "Output: Next stage data",
+        "Async: false",
+        "Agent: Cost Control Agent"
+      ],
+      "metrics": {
+        "Status": "idle",
+        "Confidence": "95%"
+      },
+      "processingTime": 1.0,
+      "processingState": "idle",
+      "logs": [
+        {
+          "timestamp": "2025-11-10T10:00:00Z",
+          "level": "INFO",
+          "message": "Cost Tracker initiated"
+        }
+      ],
+      "config": {
+        "version": "1.0.0",
+        "timeout": "5s",
+        "retries": 2
+      },
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "input": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "input"
+        ]
+      },
+      "outputSchema": {
+        "type": "object",
+        "properties": {
+          "output": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "output"
+        ]
+      }
+    }
+  },
+  {
+    "id": "N7",
+    "type": "custom",
+    "position": {
+      "x": 1800,
+      "y": -400
+    },
+    "data": {
+      "label": "Fetch Docs",
+      "color": "#7c3aed",
+      "description": "Downloads files; records canonical paths & hashes.",
+      "details": [
+        "Tool: repository.fetch_document",
+        "Process: Workflow step",
+        "Output: Next stage data",
+        "Async: false",
+        "Agent: Retrieval Agent"
+      ],
+      "metrics": {
+        "Status": "idle",
+        "Confidence": "95%"
+      },
+      "processingTime": 1.0,
+      "processingState": "idle",
+      "logs": [
+        {
+          "timestamp": "2025-11-10T10:00:00Z",
+          "level": "INFO",
+          "message": "Fetch Docs initiated"
+        }
+      ],
+      "config": {
+        "version": "1.0.0",
+        "timeout": "5s",
+        "retries": 2
+      },
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "input": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "input"
+        ]
+      },
+      "outputSchema": {
+        "type": "object",
+        "properties": {
+          "output": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "output"
+        ]
+      }
+    }
+  },
+  {
+    "id": "N8",
+    "type": "custom",
+    "position": {
+      "x": 2400,
+      "y": -400
+    },
+    "data": {
+      "label": "OCR & Table Parse",
+      "color": "#7c3aed",
+      "description": "OCR for scans; extracts tables with cell lineage/page anchors.",
+      "details": [
+        "Tool: ocr.parse_tables",
+        "Process: Workflow step",
+        "Output: Next stage data",
+        "Async: false",
+        "Agent: OCR Agent"
+      ],
+      "metrics": {
+        "Status": "idle",
+        "Confidence": "95%"
+      },
+      "processingTime": 1.0,
+      "processingState": "idle",
+      "logs": [
+        {
+          "timestamp": "2025-11-10T10:00:00Z",
+          "level": "INFO",
+          "message": "OCR & Table Parse initiated"
+        }
+      ],
+      "config": {
+        "version": "1.0.0",
+        "timeout": "5s",
+        "retries": 2
+      },
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "input": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "input"
+        ]
+      },
+      "outputSchema": {
+        "type": "object",
+        "properties": {
+          "output": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "output"
+        ]
+      }
+    }
+  },
+  {
+    "id": "N9",
+    "type": "custom",
+    "position": {
+      "x": 3000,
+      "y": -400
+    },
+    "data": {
+      "label": "Normalise Schema",
+      "color": "#7c3aed",
+      "description": "Harmonizes columns/units across run logs; flags outliers.",
+      "details": [
+        "Tool: schema.normalise",
+        "Process: Workflow step",
+        "Output: Next stage data",
+        "Async: false",
+        "Agent: Schema Normalization Agent"
+      ],
+      "metrics": {
+        "Status": "idle",
+        "Confidence": "95%"
+      },
+      "processingTime": 1.0,
+      "processingState": "idle",
+      "logs": [
+        {
+          "timestamp": "2025-11-10T10:00:00Z",
+          "level": "INFO",
+          "message": "Normalise Schema initiated"
+        }
+      ],
+      "config": {
+        "version": "1.0.0",
+        "timeout": "5s",
+        "retries": 2
+      },
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "input": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "input"
+        ]
+      },
+      "outputSchema": {
+        "type": "object",
+        "properties": {
+          "output": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "output"
+        ]
+      }
+    }
+  },
+  {
+    "id": "N11",
+    "type": "custom",
+    "position": {
+      "x": 1800,
+      "y": 100
+    },
+    "data": {
+      "label": "Versioning",
+      "color": "#3b82f6",
+      "description": "Eliminates version drift; ensures latest document versions.",
+      "details": [
+        "Tool: validate.version_control",
+        "Process: Workflow step",
+        "Output: Next stage data",
+        "Async: false",
+        "Agent: Validation Agent"
+      ],
+      "metrics": {
+        "Status": "idle",
+        "Confidence": "95%"
+      },
+      "processingTime": 1.0,
+      "processingState": "idle",
+      "logs": [
+        {
+          "timestamp": "2025-11-10T10:00:00Z",
+          "level": "INFO",
+          "message": "Versioning initiated"
+        }
+      ],
+      "config": {
+        "version": "1.0.0",
+        "timeout": "5s",
+        "retries": 2
+      },
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "input": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "input"
+        ]
+      },
+      "outputSchema": {
+        "type": "object",
+        "properties": {
+          "output": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "output"
+        ]
+      }
+    }
+  },
+  {
+    "id": "N12",
+    "type": "custom",
+    "position": {
+      "x": 1800,
+      "y": 600
+    },
+    "data": {
+      "label": "Compliance Check",
+      "color": "#dc2626",
+      "description": "RBAC, approval state, data handling rules; logs to audit.",
+      "details": [
+        "Tool: compliance.enforce",
+        "Process: Workflow step",
+        "Output: Next stage data",
+        "Async: false",
+        "Agent: Compliance Agent"
+      ],
+      "metrics": {
+        "Status": "idle",
+        "Confidence": "95%"
+      },
+      "processingTime": 1.0,
+      "processingState": "idle",
+      "logs": [
+        {
+          "timestamp": "2025-11-10T10:00:00Z",
+          "level": "INFO",
+          "message": "Compliance Check initiated"
+        }
+      ],
+      "config": {
+        "version": "1.0.0",
+        "timeout": "5s",
+        "retries": 2
+      },
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "input": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "input"
+        ]
+      },
+      "outputSchema": {
+        "type": "object",
+        "properties": {
+          "output": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "output"
+        ]
+      }
+    }
+  },
+  {
+    "id": "N13",
+    "type": "custom",
+    "position": {
+      "x": 1800,
+      "y": 1100
+    },
+    "data": {
+      "label": "Guardrails",
+      "color": "#dc2626",
+      "description": "Enforces safety, policy, and operational constraints across the workflow to prevent errors, security breaches, and compliance violations.\nResponsibilities:\n- Validate outputs against policy rules (e.g., data handling, privacy)\n- Detect anomalies or low-confidence results\n- Trigger manual review when thresholds are not met\n- Route failures to Dead Letter Queue with error fingerprint\n- Ensure audit logging for all decisions",
+      "details": [
+      "Tool: guardrails.enforce",
+      "Process: Workflow step",
+      "Output: Next stage data",
+      "Async: false",
+      "Agent: Governance Agent"
+      ],
+      "metrics": {
+      "Status": "idle",
+      "Confidence": "95%"
+      },
+      "processingTime": 1.0,
+      "processingState": "idle",
+      "logs": [
+      {
+          "timestamp": "2025-11-10T10:00:00Z",
+          "level": "INFO",
+          "message": "Guardrails initiated"
+        }
+      ],
+      "config": {
+        "version": "1.0.0",
+        "timeout": "5s",
+        "retries": 2
+      },
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "input": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "input"
+        ]
+      },
+      "outputSchema": {
+        "type": "object",
+        "properties": {
+          "output": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "output"
+        ]
+      }
+    }
+  },
+  {
+    "id": "N14",
+    "type": "custom",
+    "position": {
+      "x": 3600,
+      "y": -400
+    },
+    "data": {
+      "label": "Merge Join Services",
+      "color": "#ea580c",
+      "description": "Unifies outputs from parallel enrichment and compliance nodes into a single dataset for downstream workflows.",
+      "details": [
+        "Tool: merge.join_services",
+        "Process: Workflow step",
+        "Output: Next stage data",
+        "Async: false",
+        "Agent: Merge Agent"
+      ],
+      "metrics": {
+        "Status": "idle",
+        "Confidence": "95%"
+      },
+      "processingTime": 1.0,
+      "processingState": "idle",
+      "logs": [
+        {
+          "timestamp": "2025-11-10T10:00:00Z",
+          "level": "INFO",
+          "message": "Merge Join Services initiated"
+        }
+      ],
+      "config": {
+        "version": "1.0.0",
+        "timeout": "5s",
+        "retries": 2
+      },
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "input": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "input"
+        ]
+      },
+      "outputSchema": {
+        "type": "object",
+        "properties": {
+          "output": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "output"
+        ]
+      }
+    }
+  },
+  {
+    "id": "Q0",
+    "type": "custom",
+    "position": {
+      "x": 4200,
+      "y": -400
+    },
+    "data": {
+      "label": "Parse User Intent",
+      "color": "#ea580c",
+      "description": "Detect whether the query is MSAT (Deviation Resolution) or R&D (Experiment Retrieval).",
+      "details": [
+        "Tool: intent.parse_query",
+        "Process: Workflow step",
+        "Output: Next stage data",
+        "Async: false",
+        "Agent: Intent Parser Agent"
+      ],
+      "metrics": {
+        "Status": "idle",
+        "Confidence": "95%"
+      },
+      "processingTime": 1.0,
+      "processingState": "idle",
+      "logs": [
+        {
+          "timestamp": "2025-11-10T10:00:00Z",
+          "level": "INFO",
+          "message": "Parse User Intent initiated"
+        }
+      ],
+      "config": {
+        "version": "1.0.0",
+        "timeout": "5s",
+        "retries": 2
+      },
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "input": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "input"
+        ]
+      },
+      "outputSchema": {
+        "type": "object",
+        "properties": {
+          "output": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "output"
+        ]
+      }
+    }
+  },
+  {
+    "id": "MSAT1",
+    "type": "custom",
+    "position": {
+      "x": 4800,
+      "y": -900
+    },
+    "data": {
+      "label": "Detect Deviation",
+      "color": "#008080",
+      "description": "Monitor logs and flag anomalies in manufacturing process.",
+      "details": [
+        "Tool: monitor.logs",
+        "Process: Workflow step",
+        "Output: Next stage data",
+        "Async: false",
+        "Agent: Deviation Detection Agent"
+      ],
+      "metrics": {
+        "Status": "idle",
+        "Confidence": "95%"
+      },
+      "processingTime": 1.0,
+      "processingState": "idle",
+      "logs": [
+        {
+          "timestamp": "2025-11-10T10:00:00Z",
+          "level": "INFO",
+          "message": "Detect Deviation initiated"
+        }
+      ],
+      "config": {
+        "version": "1.0.0",
+        "timeout": "5s",
+        "retries": 2
+      },
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "input": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "input"
+        ]
+      },
+      "outputSchema": {
+        "type": "object",
+        "properties": {
+          "output": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "output"
+        ]
+      }
+    }
+  },
+  {
+    "id": "MSAT2",
+    "type": "custom",
+    "position": {
+      "x": 5400,
+      "y": -900
+    },
+    "data": {
+      "label": "Context Gathering",
+      "color": "#008080",
+      "sourcePosition": "right",
+      "description": "Fetch batch details, SOP references, and previous deviation IDs.",
+      "details": [
+        "Tool: fetch.batch_metadata",
+        "Process: Workflow step",
+        "Output: Next stage data",
+        "Async: false",
+        "Agent: Context Retrieval Agent"
+      ],
+      "metrics": {
+        "Status": "idle",
+        "Confidence": "95%"
+      },
+      "processingTime": 1.0,
+      "processingState": "idle",
+      "logs": [
+        {
+          "timestamp": "2025-11-10T10:00:00Z",
+          "level": "INFO",
+          "message": "Context Gathering initiated"
+        }
+      ],
+      "config": {
+        "version": "1.0.0",
+        "timeout": "5s",
+        "retries": 2
+      },
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "input": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "input"
+        ]
+      },
+      "outputSchema": {
+        "type": "object",
+        "properties": {
+          "output": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "output"
+        ]
+      }
+    }
+  },
+  {
+    "id": "MSAT3",
+    "type": "custom",
+    "position": {
+      "x": 6000,
+      "y": -900
+    },
+    "data": {
+      "label": "Semantic Search",
+      "color": "#008080",
+      "targetPositions": ["left", "right"],
+      "sourcePosition": "top",
+      "description": "Retrieve historical deviation reports and PQ records.",
+      "details": [
+        "Tool: search.deviation_reports",
+        "Process: Workflow step",
+        "Output: Next stage data",
+        "Async: false",
+        "Agent: Semantic Search Agent"
+      ],
+      "metrics": {
+        "Status": "idle",
+        "Confidence": "95%"
+      },
+      "processingTime": 1.0,
+      "processingState": "idle",
+      "logs": [
+        {
+          "timestamp": "2025-11-10T10:00:00Z",
+          "level": "INFO",
+          "message": "Semantic Search initiated"
+        }
+      ],
+      "config": {
+        "version": "1.0.0",
+        "timeout": "5s",
+        "retries": 2
+      },
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "input": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "input"
+        ]
+      },
+      "outputSchema": {
+        "type": "object",
+        "properties": {
+          "output": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "output"
+        ]
+      }
+    }
+  },
+  {
+    "id": "MSAT3Check",
+    "type": "custom",
+    "position": {
+      "x": 6000,
+      "y": -1400
+    },
+    "data": {
+      "label": "Accuracy Check - Semantic Search",
+      "color": "#3b82f6",
+      "targetPosition": "bottom",
+      "sourcePosition": "right",
+      "description": "Validate that retrieved documents meet relevance and confidence thresholds before proceeding.",
+      "details": [
+        "Tool: validate.search_accuracy",
+        "Agent: QA Agent",
+        "If RetrievalConfidence < 90%: Re-run Semantic Search",
+        "Else: Continue to Document Validation"
+      ],
+      "metrics": {
+        "RetrievalConfidence": "94%",
+        "RelevantDocs": "12"
+      },
+      "processingTime": 1.0,
+      "processingState": "idle",
+      "logs": [
+        {
+          "timestamp": "2025-11-10T10:00:00Z",
+          "level": "INFO",
+          "message": "Accuracy check initiated"
+        },
+        {
+          "timestamp": "2025-11-10T10:05:00Z",
+          "level": "INFO",
+          "message": "Retrieval confidence: 94% (Pass)"
+        }
+      ],
+      "config": {
+        "version": "1.0.0",
+        "timeout": "5s",
+        "retries": 2
+      },
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "input": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "input"
+        ]
+      },
+      "outputSchema": {
+        "type": "object",
+        "properties": {
+          "output": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "output"
+        ]
+      }
+    }
+  },
+  {
+    "id": "MSAT4",
+    "type": "custom",
+    "position": {
+      "x": 6600,
+      "y": -900
+    },
+    "data": {
+      "label": "Document Validation",
+      "color": "#008080",
+      "targetPositions": ["left", "right"],
+      "sourcePosition": "top",
+      "description": "Ensure latest versions and compliance.",
+      "details": [
+        "Tool: validate.version_control",
+        "Process: Workflow step",
+        "Output: Next stage data",
+        "Async: false",
+        "Agent: Validation Agent"
+      ],
+      "metrics": {
+        "Status": "idle",
+        "Confidence": "95%"
+      },
+      "processingTime": 1.0,
+      "processingState": "idle",
+      "logs": [
+        {
+          "timestamp": "2025-11-10T10:00:00Z",
+          "level": "INFO",
+          "message": "Document Validation initiated"
+        }
+      ],
+      "config": {
+        "version": "1.0.0",
+        "timeout": "5s",
+        "retries": 2
+      },
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "input": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "input"
+        ]
+      },
+      "outputSchema": {
+        "type": "object",
+        "properties": {
+          "output": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "output"
+        ]
+      }
+    }
+  },
+  {
+    "id": "MSAT4Check",
+    "type": "custom",
+    "position": {
+      "x": 6579,
+      "y": -1400
+    },
+    "data": {
+      "label": "Accuracy Check - Document Validation",
+      "color": "#3b82f6",
+      "targetPosition": "bottom",
+      "sourcePosition": "right",
+      "description": "Ensure compliance and version integrity checks passed before summarization.",
+      "details": [
+        "Tool: validate.compliance_accuracy",
+        "Agent: QA Agent",
+        "If ComplianceStatus = Fail: Re-run Document Validation",
+        "Else: Continue to Root Cause Analysis"
+      ],
+      "metrics": {
+        "ComplianceStatus": "Passed",
+        "VersionIntegrity": "Confirmed"
+      },
+      "processingTime": 1.0,
+      "processingState": "idle",
+      "logs": [
+        {
+          "timestamp": "2025-11-10T10:00:00Z",
+          "level": "INFO",
+          "message": "Compliance accuracy check completed"
+        },
+         {
+          "timestamp": "2025-11-10T10:00:00Z",
+          "level": "INFO",
+          "message": "Document validation passed"
+        }
+      ],
+      "config": {
+        "version": "1.0.0",
+        "timeout": "5s",
+        "retries": 2
+      },
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "input": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "input"
+        ]
+      },
+      "outputSchema": {
+        "type": "object",
+        "properties": {
+          "output": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "output"
+        ]
+      }
+    }
+  },
+  {
+    "id": "MSAT5",
+    "type": "custom",
+    "position": {
+      "x": 7200,
+      "y": -900
+    },
+    "data": {
+      "label": "Summarization",
+      "color": "#3b82f6",
+      "targetPositions": ["left", "right"],
+      "sourcePosition": "top",
+      "description": "Condense lengthy reports into actionable insights.",
+      "details": [
+        "Tool: summarize.deviation_reports",
+        "Process: Workflow step",
+        "Output: Next stage data",
+        "Async: false",
+        "Agent: Summarization Agent"
+      ],
+      "metrics": {
+        "Status": "idle",
+        "Confidence": "95%"
+      },
+      "processingTime": 1.0,
+      "processingState": "idle",
+      "logs": [
+        {
+          "timestamp": "2025-11-10T10:00:00Z",
+          "level": "INFO",
+          "message": "Summarization initiated"
+        }
+      ],
+      "config": {
+        "version": "1.0.0",
+        "timeout": "5s",
+        "retries": 2
+      },
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "input": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "input"
+        ]
+      },
+      "outputSchema": {
+        "type": "object",
+        "properties": {
+          "output": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "output"
+        ]
+      }
+    }
+  },
+   {
+    "id": "MSAT5Check",
+    "type": "custom",
+    "position": {
+      "x": 7200,
+      "y": -1400
+    },
+    "data": {
+      "label": "Accuracy Check - Summarization",
+      "color": "#3b82f6",
+      "targetPosition": "bottom",
+      "sourcePosition": "right",
+      "description": "Validate summary completeness and factual accuracy. If score < threshold → Re-run Summarization",
+      "details": [
+        "Tool: validate.summary_quality",
+        "Process: Workflow step",
+        "Output: Next stage data",
+        "Async: false",
+        "Agent: QA Agent"
+      ],
+      "metrics": {
+        "CompletenessScore": "92%",
+        "FactualAccuracy": "Passed%"
+      },
+      "processingTime": 1.0,
+      "processingState": "idle",
+      "logs": [
+        {
+          "timestamp": "2025-11-10T10:00:00Z",
+          "level": "INFO",
+          "message": "Summary validated successfully"
+        }
+      ],
+      "config": {
+        "version": "1.0.0",
+        "timeout": "5s",
+        "retries": 2
+      },
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "input": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "input"
+        ]
+      },
+      "outputSchema": {
+        "type": "object",
+        "properties": {
+          "output": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "output"
+        ]
+      }
+    }
+  },
+  {
+    "id": "MSAT6",
+    "type": "custom",
+    "position": {
+      "x": 7800,
+      "y": -900
+    },
+    "data": {
+      "label": "Root Cause Analysis",
+      "color": "#008080",
+      "description": "Suggest probable root cause based on historical patterns.",
+      "details": [
+        "Tool: analyze.patterns",
+        "Process: Workflow step",
+        "Output: Next stage data",
+        "Async: false",
+        "Agent: RCA Agent"
+      ],
+      "metrics": {
+        "Status": "idle",
+        "Confidence": "95%"
+      },
+      "processingTime": 1.0,
+      "processingState": "idle",
+      "logs": [
+        {
+          "timestamp": "2025-11-10T10:00:00Z",
+          "level": "INFO",
+          "message": "Root Cause Analysis initiated"
+        }
+      ],
+      "config": {
+        "version": "1.0.0",
+        "timeout": "5s",
+        "retries": 2
+      },
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "input": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "input"
+        ]
+      },
+      "outputSchema": {
+        "type": "object",
+        "properties": {
+          "output": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "output"
+        ]
+      }
+    }
+  },
+  {
+    "id": "MSAT7",
+    "type": "custom",
+    "position": {
+      "x": 8400,
+      "y": -900
+    },
+    "data": {
+      "label": "Resolution Drafting",
+      "color": "#008080",
+      "description": "Validate compliance and draft corrective action.",
+      "details": [
+        "Tool: draft.corrective_action",
+        "Process: Workflow step",
+        "Output: Next stage data",
+        "Async: false",
+        "Agent: Resolution Agent"
+      ],
+      "metrics": {
+        "Status": "idle",
+        "Confidence": "95%"
+      },
+      "processingTime": 1.0,
+      "processingState": "idle",
+      "logs": [
+        {
+          "timestamp": "2025-11-10T10:00:00Z",
+          "level": "INFO",
+          "message": "Resolution Drafting initiated"
+        }
+      ],
+      "config": {
+        "version": "1.0.0",
+        "timeout": "5s",
+        "retries": 2
+      },
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "input": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "input"
+        ]
+      },
+      "outputSchema": {
+        "type": "object",
+        "properties": {
+          "output": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "output"
+        ]
+      }
+    }
+  },
+  {
+    "id": "MSAT8",
+    "type": "custom",
+    "position": {
+      "x": 9000,
+      "y": -900
+    },
+    "data": {
+      "label": "Knowledge Capture",
+      "color": "#008080",
+      "description": "Update Knowledge Graph and Vector DB for future queries.",
+      "details": [
+        "Tool: update.knowledge_graph",
+        "Process: Workflow step",
+        "Output: Next stage data",
+        "Async: false",
+        "Agent: Knowledge Management Agent"
+      ],
+      "metrics": {
+        "Status": "idle",
+        "Confidence": "95%"
+      },
+      "processingTime": 1.0,
+      "processingState": "idle",
+      "logs": [
+        {
+          "timestamp": "2025-11-10T10:00:00Z",
+          "level": "INFO",
+          "message": "Knowledge Capture initiated"
+        }
+      ],
+      "config": {
+        "version": "1.0.0",
+        "timeout": "5s",
+        "retries": 2
+      },
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "input": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "input"
+        ]
+      },
+      "outputSchema": {
+        "type": "object",
+        "properties": {
+          "output": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "output"
+        ]
+      }
+    }
+  },
+  {
+    "id": "RD0",
+    "type": "custom",
+    "position": {
+      "x": 4800,
+      "y": 100
+    },
+    "data": {
+      "label": "Parse Knowledge Retrieval Query",
+      "color": "#008080",
+      "description": "Interpret user query for experiment results and extract parameters.",
+      "details": [
+        "Tool: intent.parse_query",
+        "Agent: Intent Parser Agent",
+        "Metrics: IntentClarity: 95%",
+        "WorkflowInitiated: True"
+      ],
+      "metrics": {
+        "IntentClarity": "95%"
+      },
+      "processingTime": 1.0,
+      "processingState": "idle",
+      "logs": [
+        {
+          "timestamp": "2025-11-10T10:00:00Z",
+          "level": "INFO",
+          "message": "Query parsing initiated"
+        }, 
+        {
+          "timestamp": "2025-11-10T10:00:00Z",
+          "level": "INFO",
+          "message": "Detected experiment cluster retrieval"
+        }
+      ],
+      "config": {
+        "version": "1.0.0",
+        "timeout": "5s",
+        "retries": 2
+      },
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "input": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "input"
+        ]
+      },
+      "outputSchema": {
+        "type": "object",
+        "properties": {
+          "output": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "output"
+        ]
+      }
+    }
+  },
+  {
+    "id": "RD1",
+    "type": "custom",
+    "position": {
+      "x": 5400,
+      "y": 100
+    },
+    "data": {
+      "label": "Semantic Search",
+      "color": "#008080",
+      "description": "Retrieve relevant experiment clusters and SOPs.",
+      "details": [
+        "Tool: search.semantic_query",
+        "Process: Workflow step",
+        "Output: Next stage data",
+        "Async: false",
+        "Agent: Semantic Search Agent"
+      ],
+      "metrics": {
+        "Status": "idle",
+        "Confidence": "95%"
+      },
+      "processingTime": 1.0,
+      "processingState": "idle",
+      "logs": [
+        {
+          "timestamp": "2025-11-10T10:00:00Z",
+          "level": "INFO",
+          "message": "Semantic Search initiated"
+        }
+      ],
+      "config": {
+        "version": "1.0.0",
+        "timeout": "5s",
+        "retries": 2
+      },
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "input": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "input"
+        ]
+      },
+      "outputSchema": {
+        "type": "object",
+        "properties": {
+          "output": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "output"
+        ]
+      }
+    }
+  },
+  {
+    "id": "RD2",
+    "type": "custom",
+    "position": {
+      "x": 6000,
+      "y": 100
+    },
+    "data": {
+      "label": "Document Retrieval",
+      "color": "#008080",
+      "description": "Fetch experiment data from repositories.",
+      "details": [
+        "Tool: repository.fetch_document",
+        "Process: Workflow step",
+        "Output: Next stage data",
+        "Async: false",
+        "Agent: Retrieval Agent"
+      ],
+      "metrics": {
+        "Status": "idle",
+        "Confidence": "95%"
+      },
+      "processingTime": 1.0,
+      "processingState": "idle",
+      "logs": [
+        {
+          "timestamp": "2025-11-10T10:00:00Z",
+          "level": "INFO",
+          "message": "Document Retrieval initiated"
+        }
+      ],
+      "config": {
+        "version": "1.0.0",
+        "timeout": "5s",
+        "retries": 2
+      },
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "input": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "input"
+        ]
+      },
+      "outputSchema": {
+        "type": "object",
+        "properties": {
+          "output": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "output"
+        ]
+      }
+    }
+  },
+  {
+    "id": "RD3",
+    "type": "custom",
+    "position": {
+      "x": 6600,
+      "y": 100
+    },
+    "data": {
+      "label": "Document Validation",
+      "color": "#008080",
+      "description": "Ensure latest versions and compliance.",
+      "details": [
+        "Tool: validate.version_control",
+        "Process: Workflow step",
+        "Output: Next stage data",
+        "Async: false",
+        "Agent: Validation Agent"
+      ],
+      "metrics": {
+        "Status": "idle",
+        "Confidence": "95%"
+      },
+      "processingTime": 1.0,
+      "processingState": "idle",
+      "logs": [
+        {
+          "timestamp": "2025-11-10T10:00:00Z",
+          "level": "INFO",
+          "message": "Document Validation initiated"
+        }
+      ],
+      "config": {
+        "version": "1.0.0",
+        "timeout": "5s",
+        "retries": 2
+      },
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "input": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "input"
+        ]
+      },
+      "outputSchema": {
+        "type": "object",
+        "properties": {
+          "output": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "output"
+        ]
+      }
+    }
+  },
+  {
+    "id": "RD4",
+    "type": "custom",
+    "position": {
+      "x": 7200,
+      "y": 100
+    },
+    "data": {
+      "label": "Summarization",
+      "color": "#3b82f6",
+      "targetPositions": ["left", "right"],
+      "sourcePosition": "bottom",
+      "description": "Condense experiment clusters into concise insights.",
+      "details": [
+        "Tool: summarize.experiment_clusters",
+        "Process: Workflow step",
+        "Output: Next stage data",
+        "Async: false",
+        "Agent: Summarization Agent"
+      ],
+      "metrics": {
+        "Status": "idle",
+        "Confidence": "95%"
+      },
+      "processingTime": 1.0,
+      "processingState": "idle",
+      "logs": [
+        {
+          "timestamp": "2025-11-10T10:00:00Z",
+          "level": "INFO",
+          "message": "Summarization initiated"
+        }
+      ],
+      "config": {
+        "version": "1.0.0",
+        "timeout": "5s",
+        "retries": 2
+      },
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "input": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "input"
+        ]
+      },
+      "outputSchema": {
+        "type": "object",
+        "properties": {
+          "output": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "output"
+        ]
+      }
+    }
+  },
+  {
+    "id": "RD4Check",
+    "type": "custom",
+    "position": {
+      "x": 7200,
+      "y": 600
+    },
+    "data": {
+      "label": "Accuracy Check - Summarization",
+      "color": "#3b82f6",
+      "targetPosition": "top",
+      "sourcePosition": "right",
+      "description": "Validate completeness and factual accuracy of experiment summaries before generating contextual insights.",
+      "details": [
+        "Tool: validate.summary_quality",
+        "Process: QA Validation of Summarization output",
+        "Output: Pass/Fail decision for summary accuracy",
+        "Async: false",
+        "Agent: QA Agent"
+      ],
+      "metrics": {
+        "CompletenessScore": "92%",
+        "FactualAccuracy": "Passed",
+        "Threshold": "90%"
+      },
+      "processingTime": 1.5,
+      "processingState": "idle",
+      "logs": [
+        {
+          "timestamp": "2025-11-10T10:00:00Z",
+          "level": "INFO",
+          "message": "Accuracy check initiated for summarization"
+        },
+         {
+          "timestamp": "2025-11-10T10:00:00Z",
+          "level": "INFO",
+          "message": "Completeness score: 92%, Factual accuracy: Passed"
+        }
+      ],
+      "config": {
+        "version": "1.0.0",
+        "timeout": "5s",
+        "retries": 2
+      },
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "input": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "input"
+        ]
+      },
+      "outputSchema": {
+        "type": "object",
+        "properties": {
+          "output": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "output"
+        ]
+      }
+    }
+  },
+  {
+    "id": "RD5",
+    "type": "custom",
+    "position": {
+      "x": 7800,
+      "y": 100
+    },
+    "data": {
+      "label": "Contextual Insights",
+      "color": "#3b82f6",
+      "description": "Combine summaries with metadata and provide recommendations.",
+      "details": [
+        "Tool: generate.contextual_insights",
+        "Process: Workflow step",
+        "Output: Next stage data",
+        "Async: false",
+        "Agent: Insights Agent"
+      ],
+      "metrics": {
+        "Status": "idle",
+        "Confidence": "95%"
+      },
+      "processingTime": 1.0,
+      "processingState": "idle",
+      "logs": [
+        {
+          "timestamp": "2025-11-10T10:00:00Z",
+          "level": "INFO",
+          "message": "Contextual Insights initiated"
+        }
+      ],
+      "config": {
+        "version": "1.0.0",
+        "timeout": "5s",
+        "retries": 2
+      },
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "input": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "input"
+        ]
+      },
+      "outputSchema": {
+        "type": "object",
+        "properties": {
+          "output": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "output"
+        ]
+      }
+    }
+  }
+]

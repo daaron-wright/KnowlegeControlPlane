@@ -1,0 +1,734 @@
+[
+  {
+    "id": "e-n0-n1",
+    "source": "N0",
+    "target": "N1",
+    "type": "default",
+    "animated": false,
+    "style": {
+      "stroke": "#059669",
+      "strokeWidth": 2,
+      "opacity": 0.8
+    },
+    "markerEnd": {
+      "type": "MarkerType.ArrowClosed",
+      "color": "#059669"
+    }
+  },
+  {
+    "id": "e-n1-n2",
+    "source": "N1",
+    "target": "N2",
+    "type": "default",
+    "animated": false,
+    "style": {
+      "stroke": "#059669",
+      "strokeWidth": 2,
+      "opacity": 0.8
+    },
+    "markerEnd": {
+      "type": "MarkerType.ArrowClosed",
+      "color": "#059669"
+    }
+  },
+  {
+    "id": "e-n2-n3",
+    "source": "N2",
+    "target": "N3",
+    "type": "default",
+    "animated": false,
+    "style": {
+      "stroke": "#059669",
+      "strokeWidth": 2,
+      "opacity": 0.8
+    },
+    "markerEnd": {
+      "type": "MarkerType.ArrowClosed",
+      "color": "#059669"
+    }
+  },
+  {
+    "id": "e-n3-n4",
+    "source": "N3",
+    "target": "N4",
+    "type": "default",
+    "animated": false,
+    "style": {
+      "stroke": "#059669",
+      "strokeWidth": 2,
+      "opacity": 0.8
+    },
+    "markerEnd": {
+      "type": "MarkerType.ArrowClosed",
+      "color": "#059669"
+    }
+  },
+  {
+    "id": "e-n4-n5",
+    "source": "N4",
+    "target": "N5",
+    "type": "default",
+    "animated": false,
+    "style": {
+      "stroke": "#059669",
+      "strokeWidth": 2,
+      "opacity": 0.8
+    },
+    "markerEnd": {
+      "type": "MarkerType.ArrowClosed",
+      "color": "#059669"
+    }
+  },
+  {
+    "id": "e-n4-n6",
+    "source": "N4",
+    "target": "N6",
+    "type": "default",
+    "animated": false,
+    "style": {
+      "stroke": "#059669",
+      "strokeWidth": 2,
+      "opacity": 0.8
+    },
+    "markerEnd": {
+      "type": "MarkerType.ArrowClosed",
+      "color": "#059669"
+    }
+  },
+  {
+    "id": "e-n4-n7",
+    "source": "N4",
+    "target": "N7",
+    "type": "default",
+    "animated": false,
+    "style": {
+      "stroke": "#059669",
+      "strokeWidth": 2,
+      "opacity": 0.8
+    },
+    "markerEnd": {
+      "type": "MarkerType.ArrowClosed",
+      "color": "#059669"
+    }
+  },
+  {
+    "id": "e-n4-n8",
+    "source": "N4",
+    "target": "N8",
+    "type": "default",
+    "animated": false,
+    "style": {
+      "stroke": "#059669",
+      "strokeWidth": 2,
+      "opacity": 0.8
+    },
+    "markerEnd": {
+      "type": "MarkerType.ArrowClosed",
+      "color": "#059669"
+    }
+  },
+  {
+    "id": "e-n4-n10",
+    "source": "N4",
+    "target": "N10",
+    "type": "default",
+    "animated": false,
+    "style": {
+      "stroke": "#059669",
+      "strokeWidth": 2,
+      "opacity": 0.8
+    },
+    "markerEnd": {
+      "type": "MarkerType.ArrowClosed",
+      "color": "#059669"
+    }
+  },
+  {
+    "id": "e-n4-n11",
+    "source": "N4",
+    "target": "N11",
+    "type": "default",
+    "animated": false,
+    "style": {
+      "stroke": "#059669",
+      "strokeWidth": 2,
+      "opacity": 0.8
+    },
+    "markerEnd": {
+      "type": "MarkerType.ArrowClosed",
+      "color": "#059669"
+    }
+  },
+  {
+    "id": "e-n4-n12",
+    "source": "N4",
+    "target": "N12",
+    "type": "default",
+    "animated": false,
+    "style": {
+      "stroke": "#059669",
+      "strokeWidth": 2,
+      "opacity": 0.8
+    },
+    "markerEnd": {
+      "type": "MarkerType.ArrowClosed",
+      "color": "#059669"
+    }
+  },
+  {
+    "id": "e-n4-n13",
+    "source": "N4",
+    "target": "N13",
+    "type": "default",
+    "animated": false,
+    "style": {
+      "stroke": "#059669",
+      "strokeWidth": 2,
+      "opacity": 0.8
+    },
+    "markerEnd": {
+      "type": "MarkerType.ArrowClosed",
+      "color": "#059669"
+    }
+  },
+  {
+    "id": "e-n7-n8",
+    "source": "N7",
+    "target": "N8",
+    "type": "default",
+    "animated": false,
+    "style": {
+      "stroke": "#2b6cb0",
+      "strokeWidth": 2,
+      "opacity": 0.8
+    },
+    "markerEnd": {
+      "type": "MarkerType.ArrowClosed",
+      "color": "#2b6cb0"
+    }
+  },
+  {
+    "id": "e-n8-n9",
+    "source": "N8",
+    "target": "N9",
+    "type": "default",
+    "animated": false,
+    "style": {
+      "stroke": "#2b6cb0",
+      "strokeWidth": 2,
+      "opacity": 0.8
+    },
+    "markerEnd": {
+      "type": "MarkerType.ArrowClosed",
+      "color": "#2b6cb0"
+    }
+  },
+  {
+    "id": "e-n5-n14",
+    "source": "N5",
+    "target": "N14",
+    "type": "default",
+    "animated": false,
+    "style": {
+      "stroke": "#2b6cb0",
+      "strokeWidth": 2,
+      "opacity": 0.8
+    },
+    "markerEnd": {
+      "type": "MarkerType.ArrowClosed",
+      "color": "#2b6cb0"
+    }
+  },
+  {
+    "id": "e-n6-n14",
+    "source": "N6",
+    "target": "N14",
+    "type": "default",
+    "animated": false,
+    "style": {
+      "stroke": "#2b6cb0",
+      "strokeWidth": 2,
+      "opacity": 0.8
+    },
+    "markerEnd": {
+      "type": "MarkerType.ArrowClosed",
+      "color": "#2b6cb0"
+    }
+  },
+  {
+    "id": "e-n8-n14",
+    "source": "N8",
+    "target": "N14",
+    "type": "default",
+    "animated": false,
+    "style": {
+      "stroke": "#2b6cb0",
+      "strokeWidth": 2,
+      "opacity": 0.8
+    },
+    "markerEnd": {
+      "type": "MarkerType.ArrowClosed",
+      "color": "#2b6cb0"
+    }
+  },
+  {
+    "id": "e-n10-n14",
+    "source": "N10",
+    "target": "N14",
+    "type": "default",
+    "animated": false,
+    "style": {
+      "stroke": "#2b6cb0",
+      "strokeWidth": 2,
+      "opacity": 0.8
+    },
+    "markerEnd": {
+      "type": "MarkerType.ArrowClosed",
+      "color": "#2b6cb0"
+    }
+  },
+  {
+    "id": "e-n11-n14",
+    "source": "N11",
+    "target": "N14",
+    "type": "default",
+    "animated": false,
+    "style": {
+      "stroke": "#2b6cb0",
+      "strokeWidth": 2,
+      "opacity": 0.8
+    },
+    "markerEnd": {
+      "type": "MarkerType.ArrowClosed",
+      "color": "#2b6cb0"
+    }
+  },
+  {
+    "id": "e-n12-n14",
+    "source": "N12",
+    "target": "N14",
+    "type": "default",
+    "animated": false,
+    "style": {
+      "stroke": "#2b6cb0",
+      "strokeWidth": 2,
+      "opacity": 0.8
+    },
+    "markerEnd": {
+      "type": "MarkerType.ArrowClosed",
+      "color": "#2b6cb0"
+    }
+  },
+  {
+    "id": "e-n13-n14",
+    "source": "N13",
+    "target": "N14",
+    "type": "default",
+    "animated": false,
+    "style": {
+      "stroke": "#2b6cb0",
+      "strokeWidth": 2,
+      "opacity": 0.8
+    },
+    "markerEnd": {
+      "type": "MarkerType.ArrowClosed",
+      "color": "#2b6cb0"
+    }
+  },
+  {
+    "id": "e-n9-n14",
+    "source": "N9",
+    "target": "N14",
+    "type": "default",
+    "animated": false,
+    "style": {
+      "stroke": "#2b6cb0",
+      "strokeWidth": 2,
+      "opacity": 0.8
+    },
+    "markerEnd": {
+      "type": "MarkerType.ArrowClosed",
+      "color": "#2b6cb0"
+    }
+  },
+  {
+    "id": "e-n14-q0",
+    "source": "N14",
+    "target": "Q0",
+    "type": "default",
+    "animated": false,
+    "style": {
+      "stroke": "#059669",
+      "strokeWidth": 2,
+      "opacity": 0.8
+    },
+    "markerEnd": {
+      "type": "MarkerType.ArrowClosed",
+      "color": "#059669"
+    }
+  },
+  {
+    "id": "e-msat1-msat2",
+    "source": "MSAT1",
+    "target": "MSAT2",
+    "type": "default",
+    "animated": false,
+    "style": {
+      "stroke": "#059669",
+      "strokeWidth": 2,
+      "opacity": 0.8
+    },
+    "markerEnd": {
+      "type": "MarkerType.ArrowClosed",
+      "color": "#059669"
+    }
+  },
+  {
+    "id": "e-msat2-msat3",
+    "source": "MSAT2",
+    "target": "MSAT3",
+    "type": "default",
+    "animated": false,
+    "style": {
+      "stroke": "#059669",
+      "strokeWidth": 2,
+      "opacity": 0.8
+    },
+    "markerEnd": {
+      "type": "MarkerType.ArrowClosed",
+      "color": "#059669"
+    }
+  },
+  {
+    "id": "e-msat6-msat7",
+    "source": "MSAT6",
+    "target": "MSAT7",
+    "type": "default",
+    "animated": false,
+    "style": {
+      "stroke": "#059669",
+      "strokeWidth": 2,
+      "opacity": 0.8
+    },
+    "markerEnd": {
+      "type": "MarkerType.ArrowClosed",
+      "color": "#059669"
+    }
+  },
+  {
+    "id": "e-msat7-msat8",
+    "source": "MSAT7",
+    "target": "MSAT8",
+    "type": "default",
+    "animated": false,
+    "style": {
+      "stroke": "#059669",
+      "strokeWidth": 2,
+      "opacity": 0.8
+    },
+    "markerEnd": {
+      "type": "MarkerType.ArrowClosed",
+      "color": "#059669"
+    }
+  },
+  {
+    "id": "e-msat3-msat3Check",
+    "source": "MSAT3",
+    "target": "MSAT3Check",
+    "sourceHandle": "source-top-0",
+    "targetHandle": "target-bottom-0",
+    "type": "default",
+    "animated": false,
+    "style": {
+      "stroke": "#2b6cb0",
+      "strokeWidth": 2,
+      "opacity": 0.8
+    },
+    "markerEnd": {
+      "type": "MarkerType.ArrowClosed",
+      "color": "#2b6cb0"
+    }
+  },
+  {
+    "id": "e-msat3Check-msat4",
+    "source": "MSAT3Check",
+    "target": "MSAT4",
+    "type": "default",
+    "animated": false,
+    "style": {
+      "stroke": "#2b6cb0",
+      "strokeWidth": 2,
+      "opacity": 0.8
+    },
+    "markerEnd": {
+      "type": "MarkerType.ArrowClosed",
+      "color": "#2b6cb0"
+    }
+  },
+  {
+    "id": "e-msat3Check-msat3",
+    "source": "MSAT3Check",
+    "target": "MSAT3",
+    "sourceHandle": "source-right-0",
+    "targetHandle": "target-left-0",
+    "type": "default",
+    "animated": false,
+    "style": {
+      "stroke": "#808080",
+      "strokeWidth": 2,
+      "opacity": 0.8,
+      "strokeDasharray": "5,5"
+    },
+    "markerEnd": {
+      "type": "MarkerType.ArrowClosed",
+      "color": "#808080"
+    }
+  },
+  {
+    "id": "e-msat4-msat4Check",
+    "source": "MSAT4",
+    "target": "MSAT4Check",
+    "type": "default",
+    "animated": false,
+    "style": {
+      "stroke": "#2b6cb0",
+      "strokeWidth": 2,
+      "opacity": 0.8
+    },
+    "markerEnd": {
+      "type": "MarkerType.ArrowClosed",
+      "color": "#2b6cb0"
+    }
+  },
+  {
+    "id": "e-msat4Check-msat4",
+    "source": "MSAT4Check",
+    "target": "MSAT4",
+    "sourceHandle": "source-right-0",
+    "targetHandle": "target-left-0",
+    "type": "default",
+    "animated": false,
+    "style": {
+      "stroke": "#808080",
+      "strokeWidth": 2,
+      "opacity": 0.8,
+      "strokeDasharray": "5,5"
+    },
+    "markerEnd": {
+      "type": "MarkerType.ArrowClosed",
+      "color": "#808080"
+    }
+  },
+  {
+    "id": "e-msat4Check-msat5",
+    "source": "MSAT4Check",
+    "target": "MSAT5",
+    "type": "default",
+    "animated": false,
+    "style": {
+      "stroke": "#2b6cb0",
+      "strokeWidth": 2,
+      "opacity": 0.8
+    },
+    "markerEnd": {
+      "type": "MarkerType.ArrowClosed",
+      "color": "#2b6cb0"
+    }
+  },
+  {
+    "id": "e-msat5-msat5Check",
+    "source": "MSAT5",
+    "target": "MSAT5Check",
+    "type": "default",
+    "animated": false,
+    "style": {
+      "stroke": "#2b6cb0",
+      "strokeWidth": 2,
+      "opacity": 0.8
+    },
+    "markerEnd": {
+      "type": "MarkerType.ArrowClosed",
+      "color": "#2b6cb0"
+    }
+  },
+  {
+    "id": "e-msat5Check-msat5",
+    "source": "MSAT5Check",
+    "target": "MSAT5",
+    "sourceHandle": "source-right-0",
+    "targetHandle": "target-left-0",
+    "type": "default",
+    "animated": false,
+    "style": {
+      "stroke": "#808080",
+      "strokeWidth": 2,
+      "opacity": 0.8,
+      "strokeDasharray": "5,5"
+    },
+    "markerEnd": {
+      "type": "MarkerType.ArrowClosed",
+      "color": "#808080"
+    }
+  },
+  {
+    "id": "e-msat5Check-msat6",
+    "source": "MSAT5Check",
+    "target": "MSAT6",
+    "type": "default",
+    "animated": false,
+    "style": {
+      "stroke": "#2b6cb0",
+      "strokeWidth": 2,
+      "opacity": 0.8
+    },
+    "markerEnd": {
+      "type": "MarkerType.ArrowClosed",
+      "color": "#2b6cb0"
+    }
+  },
+  {
+    "id": "e-rd0-rd1",
+    "source": "RD0",
+    "target": "RD1",
+    "type": "default",
+    "animated": false,
+    "style": {
+      "stroke": "#2b6cb0",
+      "strokeWidth": 2,
+      "opacity": 0.8
+    },
+    "markerEnd": {
+      "type": "MarkerType.ArrowClosed",
+      "color": "#2b6cb0"
+    }
+  },
+  {
+    "id": "e-rd4-rd4Check",
+    "source": "RD4",
+    "target": "RD4Check",
+    "type": "default",
+    "animated": false,
+    "style": {
+      "stroke": "#059669",
+      "strokeWidth": 2,
+      "opacity": 0.8
+    },
+    "markerEnd": {
+      "type": "MarkerType.ArrowClosed",
+      "color": "#059669"
+    }
+  },
+    {
+    "id": "e-rd4Check-rd5",
+    "source": "RD4Check",
+    "target": "RD5",
+    "type": "default",
+    "animated": false,
+    "style": {
+      "stroke": "#059669",
+      "strokeWidth": 2,
+      "opacity": 0.8
+    },
+    "markerEnd": {
+      "type": "MarkerType.ArrowClosed",
+      "color": "#059669"
+    }
+  },
+    {
+    "id": "e-rd4Check-rd4",
+    "source": "RD4Check",
+    "target": "RD4",
+    "type": "default",
+    "animated": false,
+    "style": {
+      "stroke": "#808080",
+      "strokeWidth": 2,
+      "opacity": 0.8,
+      "strokeDasharray": "5,5"
+    },
+    "markerEnd": {
+      "type": "MarkerType.ArrowClosed",
+      "color": "#808080"
+    }
+  },
+  {
+    "id": "e-rd1-rd2",
+    "source": "RD1",
+    "target": "RD2",
+    "type": "default",
+    "animated": false,
+    "style": {
+      "stroke": "#2b6cb0",
+      "strokeWidth": 2,
+      "opacity": 0.8
+    },
+    "markerEnd": {
+      "type": "MarkerType.ArrowClosed",
+      "color": "#2b6cb0"
+    }
+  },
+  {
+    "id": "e-rd2-rd3",
+    "source": "RD2",
+    "target": "RD3",
+    "type": "default",
+    "animated": false,
+    "style": {
+      "stroke": "#2b6cb0",
+      "strokeWidth": 2,
+      "opacity": 0.8
+    },
+    "markerEnd": {
+      "type": "MarkerType.ArrowClosed",
+      "color": "#2b6cb0"
+    }
+  },
+  {
+    "id": "e-rd3-rd4",
+    "source": "RD3",
+    "target": "RD4",
+    "type": "default",
+    "animated": false,
+    "style": {
+      "stroke": "#2b6cb0",
+      "strokeWidth": 2,
+      "opacity": 0.8
+    },
+    "markerEnd": {
+      "type": "MarkerType.ArrowClosed",
+      "color": "#2b6cb0"
+    }
+  },
+  {
+    "id": "e-q0-msat1",
+    "source": "Q0",
+    "target": "MSAT1",
+    "type": "default",
+    "animated": false,
+    "style": {
+      "stroke": "#059669",
+      "strokeWidth": 2,
+      "opacity": 0.8
+    },
+    "markerEnd": {
+      "type": "MarkerType.ArrowClosed",
+      "color": "#059669"
+    }
+  },
+  {
+    "id": "e-q0-rd0",
+    "source": "Q0",
+    "target": "RD0",
+    "type": "default",
+    "animated": false,
+    "style": {
+      "stroke": "#059669",
+      "strokeWidth": 2,
+      "opacity": 0.8
+    },
+    "markerEnd": {
+      "type": "MarkerType.ArrowClosed",
+      "color": "#059669"
+    }
+  }
+]
